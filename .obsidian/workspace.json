@@ -1,0 +1,156 @@
+{
+  "main": {
+    "id": "d534d535be20e1ef",
+    "type": "split",
+    "children": [
+      {
+        "id": "e31ee06c91028b19",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "74e9b781752713a8",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Technical Problem Framework.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "051c395c60f97bc5",
+    "type": "split",
+    "children": [
+      {
+        "id": "3f7dde2ce3aa051e",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "3e94858990dc021e",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "7c682fa8c1544533",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "4682600d44c8fe70",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 238.5
+  },
+  "right": {
+    "id": "9b4c8d4914f03fa3",
+    "type": "split",
+    "children": [
+      {
+        "id": "5da8a4e13fabdb9f",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "f4b869263c3f1a6d",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Technical Problem Framework.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "7d3602284f68b6cb",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "Technical Problem Framework.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "6bf3d506ca64aa75",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "0604b80bd6a05ac2",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "Technical Problem Framework.md"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "terminal:Open terminal": false
+    }
+  },
+  "active": "74e9b781752713a8",
+  "lastOpenFiles": [
+    "Algorithms/Leetcode 75 Questions (NeetCode on yt) - Sheet1.pdf",
+    "Technical Problem Framework.md",
+    "Algorithms/~$chnical Problems Framework.docx"
+  ]
+}
