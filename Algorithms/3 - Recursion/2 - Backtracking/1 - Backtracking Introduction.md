@@ -1,7 +1,7 @@
 Many programming problems can be solved by systematically **searching a set of *all possibilities***.
 ## **Formal Definition**
 
-Recursive Backtracking is a general algorithm for finding solutions to a problem 
+Recursive Backtracking is a general algorithm for finding solutions to a problem.
 
 Backtracking is a systematic method of iterating through all possible configurations of a search space.
 
@@ -54,8 +54,8 @@ if at a solution
 	store/report success
 	
 for(every possible choice from current state) {
-	make a choice and take one step along that choice path
-	use recursion to try and solve the problem for the new state
+	check if selected path is safe, if yes select it
+	make recursive call to explore the problem for the state
 	if the recursive call succeeds
 		report the success to the previous level
 	else
@@ -82,3 +82,4 @@ where depth is the farthest the call stack goes in DFS.
 **Good Resources:**
 https://www.cs.utexas.edu/~scottm/cs314/handouts/slides/Topic13RecursiveBacktracking.pdf
 https://cs.lmu.edu/~ray/notes/backtracking/
+https://courses.cs.washington.edu/courses/cse143/20wi/notes/notes17.html
