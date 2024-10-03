@@ -38,19 +38,29 @@ From these use cases, there are three main types graph-traversal algorithms:
 Are there other ways to solve these use cases? Of course, but these are the most common graph traversal algorithms you must know.
 
 These algorithms apply to both directed and undirected graphs.
+
+>[!Important]
+>While there are many graph traversal algorithms, DFS, BFS, and Dijkstra's Algorithm are the most common for specific use cases.
+>1. DFS - Does any path exist
+>2. BFS - What is the shortest path (# edges)
+>3. Dijkstra's - What is the shortest path (sum of weighted edges)
+
 ##### DFS vs BFS
-These algorithms actually are similar, but  visit vertices in **different orders**. 
+These algorithms actually are similar, but visit vertices in **different orders**. 
 However, **_if they both start at the same vertex_**, they will **_visit the same set of vertices_**, just in different orders.
+
+>[!Important]
+>DFS and BFS visit the same set of vertices in different orders.
 
 **Example**
 The following figure shows the traversal order of DFS vs. BFS on an undirected graph.
-Both algorithms begin at vertex _v_.
+Both algorithms begin at vertex _s_.
 
-![[Pasted image 20230828100526.png]]
+![DFS|300](https://courses.grainger.illinois.edu/cs225/sp2024/assets/notes/bfs_dfs/dfs.png)![BFS|300](https://courses.grainger.illinois.edu/cs225/sp2024/assets/notes/bfs_dfs/bfs.png)
 ## **Depth-First Search**
 
 ##### **Algorithm Overview**
-**Depth-First Search (DFS)** is a graph traversal strategy often implemented **_recursively_** (but can be implemented iteratively).
+**Depth-First Search (DFS)** is a graph traversal strategy often implemented **_recursively_** (but can be implemented iteratively using a stack).
 
 **DFS** finds a path between two vertices by exploring each possible path as far as possible before backtracking.
 
@@ -59,8 +69,11 @@ This does not mean it finds the most optimal (i.e, shortest) path.
 
 DFS marks **_visited_** nodes so it does not revisit the same node twice.
 
+>[!Important]
+>**DFS** explores each possible path as far as possible before backtracking to another path.
+
 **Example**
-![[Pasted image 20230828100726.png]]
+![[Pasted image 20240917171130.png]]
 
 Depth-first paths from **_a_** to all other vertices (assuming ABC edge order):
 - to b: {a,b}
@@ -74,7 +87,7 @@ Depth-first paths from **_a_** to all other vertices (assuming ABC edge order):
 1. **Discovery:**
     DFS is guaranteed to find a path if one exists.
     This does not mean it finds the most optimal (i.e, shortest) path.
-    Example: dfs(a,f) returns {a,d,c,f} rather than {a,d,f}.
+    Example: dfs(a,f) returns {a,b,e,f} rather than {a,e,f}.
 
 2. **Retrieval:**
    It is easy to retrieve exactly what the path taken (sequence of edges) is if we find it.
@@ -82,7 +95,7 @@ Depth-first paths from **_a_** to all other vertices (assuming ABC edge order):
 3. **Optimality:**
    If the graph is undirected and unconnected, or directed and not strongly connected, this strategy might fail to visit some nodes.
 ##### **Mark Visited Nodes**
-If this process is performed on a **tree**
+If this process is performed on a **binary tree**
 - All tree vertices are systematically visited in a total of _O_(|_E_|) time, since |_E+1_| = _O_(|_V_|).
   (note this case is not the same for graphs, because nodes are not required to have an out-degree of 2)
 
@@ -92,6 +105,7 @@ If we perform this process on an **arbitrary graph**
 
 We implicitly assume that for undirected graphs every edge (_v_, _w_) appears twice in the adjacency lists: once as (_v_, _w_) and once as (_w_, _v_).
 
+>[!Important]
 > We mark nodes as visited so we know which ones we have already visited. This helps us avoid cycles.
 ##### **Traversal Order**
 How do we determine **which unvisited adjacent vertex to visit**?
@@ -99,6 +113,7 @@ How do we determine **which unvisited adjacent vertex to visit**?
 - One possibility is to visit the vertices adjacent to _v_ in natural sorted order (e.g., alphabetic, or numerically increasing).
 - This possibility is natural either when an adjacency matrix represents the graph or when the nodes in each linked chain of an adjacency list are linked in sorted order.
 
+>[!Important]
 > DFS does not have a standard for the order in which unvisited adjacent nodes are visited. A common solution is use natural sorted order.
 ##### **DFS Recursive Algorithm**
 ```Java
@@ -127,7 +142,7 @@ private void dfs(Vertex current, Vertex target, Path path) {
 
 The **_path_** parameter above is used if you want to have the path available as a list once you are done.
 
-By recursively calling the procedures only on nodes that have not been visited, we guarantee that we do not loop indefinitely (in the case of cyclic graphs).
+By recursively calling the procedures **only on nodes that have not been visited**, we guarantee that we do not loop indefinitely (in the case of cyclic graphs).
 
 We then search for an unmarked node, apply a depth-first traversal there, and continue this process until there are no unmarked nodes.
 ##### **DFS Iterative Algorithm**
@@ -165,6 +180,8 @@ This _last visited, first explored_ strategy is reflected both in the explicit s
 
 ##### **Runtime**
 Because this strategy guarantees that each edge is encountered only once, the total time to perform the traversal is _O_(|_E_| + |_V_|), as long as adjacency lists are used.
+
+___
 ## **Breadth-First Search**
 
 ##### **Algorithm Overview**
@@ -181,17 +198,8 @@ Breadth-First Search finds a path between two nodes by
 
 It is often implemented by maintaining a **queue** of **vertices to visit**.
 
-**Example**
-![[Pasted image 20230828154724.png]]
-
-Depth-first paths from **_a_** to all other vertices (assuming ABC edge order):
-- to b:{a,b}
-- to c: {a,e,f,c}
-- to d:{a,d}
-- to e:{a,e}
-- to f: {a,e,f}
-- to g:{a,d,g}
-- to h:{a,d,h}
+>[!Important]
+>BFS is an iterative graph traversal algorithm that finds the shortest path between two nodes in an unweighted graph. It is implemented by adding a nodes adjacent neighbors to a queue.
 ##### BFS Properties
 1. **Optimality**
    Always finds the **shortest path** (fewest edges).
@@ -204,7 +212,7 @@ Depth-first paths from **_a_** to all other vertices (assuming ABC edge order):
    Solution: We can use extra space to keep track of the path by storing predecessors for each vertex in an array/list (each vertex can store a reference to the previous vertex on a path).
 ##### Example Walkthrough
 **Input:**
-We are given a starting vertex, _s_ as an input parameter.
+We are given a starting vertex, _s_.
 
 **Goal:**
 We would like to find the shortest path from _s_ to all other vertices.
@@ -219,30 +227,38 @@ For now, suppose we are interested only in the **length** of the shortest paths,
 
 **Diagram:**
 Figure 9.10 shows an unweighted graph, _G_.
-![[Pasted image 20230828155120.png]]
+
+![[Pasted image 20240917224649.png]]
 
 1. Step 1:
    Suppose we choose _s_ to be v3. 
    Immediately, we can tell that the shortest path from _s_ to v3 is then a path of length 0.
    We can mark this information, obtaining the graph in Figure 9.11.
-![[Pasted image 20230828155149.png]]
+   
+![[Pasted image 20240917224704.png]]
 
-2. Now we can start looking for all vertices that are a **distance 1 away** **from** **_s_**.
+2. Step 2:
+   Now we can start looking for all vertices that are a **distance 1 away** **from** **_s_**.
    These can be found by looking at the **vertices that are** **adjacent** to **_s_**.
    If we do this, we see that v1 and v6 are one edge from _s_.
    This is shown in Figure 9.12.
-![[Pasted image 20230828155229.png]]
+   
+![[Pasted image 20240917225131.png]]
 
-3. We can now find vertices whose **shortest path from _s_ is exactly 2**.
+3. Step 3:
+   We can now find vertices whose **shortest path from _s_ is exactly 2**.
    We find all the vertices adjacent to v1 and v6 (the vertices at distance 1), whose shortest paths are not already known.
    This search tells us that the shortest path to v2 and v4 is 2.
    Figure 9.13 shows the progress that has been made so far.
-![[Pasted image 20230828155303.png]]
+   
+![[Pasted image 20240917225306.png]]
 
-4. Finally, examine the vertices adjacent to the recently evaluated v2 and v4.
+4. Step 4:
+   Finally, examine the vertices adjacent to the recently evaluated v2 and v4.
    This search tells us that the shortest path to v5 and v7 is 3.
    All vertices have now been calculated, and so Figure 9.14 shows the final result of the algorithm.
-![[Pasted image 20230828155333.png]]
+   
+![[Pasted image 20240917225404.png]]
 
 This strategy for searching a graph is known as **breadth-first search**.
 It operates by processing vertices in layers:
@@ -326,16 +342,14 @@ public void bfs(Vertex v1, Vertex v2)
     mark v1 as visited
 
     while(queue is not empty) {
-    
-        v = queue.removeFirst();          // remove current node
-        
-        if (v1 is v2) {                   // check to find the shortest path from v1 to v2
-            a path is found!              // reconstruct path by following .previous back to v
+        v = queue.removeFirst(); // remove top node
+        if (v1 is v2) {          // check to find the shortest path from v1 to v2
+            a path is found!     // get path by following .previous back to v
         }
         
         for(each unvisited neighbor n of v) {
-            mark n as visited                       // avoid cycles by marking n as visited
-            queue.addLast(n);                       // add n to queue
+            mark n as visited             // avoid cycles by marking n as visited
+            queue.addLast(n);             // add n to queue
         }
     
     }
@@ -397,5 +411,3 @@ This is O(E) if the graph is connected, since there must be at least O(V) edges 
 An adjacency matrix holds O(V<sup>2</sup>) indices. We must visit every index, even if it does not hold a vertex. Therefore, DFS/BFS for an adjacency matrix requires O(V<sup>2</sup>) time.
 
 ![[Pasted image 20230828161120.png]]
-
-

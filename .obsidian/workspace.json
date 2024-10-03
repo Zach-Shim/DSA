@@ -4,16 +4,16 @@
     "type": "split",
     "children": [
       {
-        "id": "e31ee06c91028b19",
+        "id": "586480a4274bd739",
         "type": "tabs",
         "children": [
           {
-            "id": "74e9b781752713a8",
+            "id": "158609d1d704aad2",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Algorithms/3 - Recursion/2 - Backtracking/1 - Backtracking Introduction.md",
+                "file": "ADT's/Graphs/notes/1 - Graph Terminology.md",
                 "mode": "source",
                 "source": false
               }
@@ -69,7 +69,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 238.5
+    "width": 299.5
   },
   "right": {
     "id": "9b4c8d4914f03fa3",
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Algorithms/3 - Recursion/2 - Backtracking/1 - Backtracking Introduction.md",
+                "file": "ADT's/Graphs/notes/1 - Graph Terminology.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Algorithms/3 - Recursion/2 - Backtracking/1 - Backtracking Introduction.md",
+                "file": "ADT's/Graphs/notes/1 - Graph Terminology.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Algorithms/3 - Recursion/2 - Backtracking/1 - Backtracking Introduction.md"
+                "file": "ADT's/Graphs/notes/1 - Graph Terminology.md"
               }
             }
           }
@@ -147,45 +147,53 @@
       "terminal:Open terminal": false
     }
   },
-  "active": "74e9b781752713a8",
+  "active": "158609d1d704aad2",
   "lastOpenFiles": [
-    "ADT's/Graphs/problems/Island Perimeter.md",
+    "ADT's/Graphs/notes/2 - Graph Implementation.md",
+    "ADT's/Graphs/notes/3 - Graph Traversal.md",
+    "ADT's/Graphs/notes/4 - Weighted Shortest Path.md",
+    "Algorithms/Graphs/patterns/Graph Traversals.md",
+    "ADT's/Graphs/notes/5 - Topological Sort.md",
+    "ADT's/Graphs/notes/1 - Graph Terminology.md",
+    "images/Graphs/Pasted image 20240917224649.png",
+    "images/Graphs/Pasted image 20240917225404.png",
+    "images/Graphs/Pasted image 20240917225306.png",
+    "images/Graphs/Pasted image 20240917225131.png",
+    "images/Graphs/Pasted image 20240917224704.png",
+    "images/Graphs/Pasted image 20240917162847.png",
+    "images/Graphs",
+    "images",
+    "images/Graphs/Pasted image 20240917171130.png",
+    "images/Graphs/Pasted image 20240917163745.png",
+    "images/Graphs/Pasted image 20240917163413.png",
+    "Pasted image 20240917162048.png",
+    "Algorithms/Graphs/problems/Island Perimeter.md",
+    "Algorithms/Graphs/patterns",
+    "Technical Problem Framework.md",
+    "ADT's/Problem Template.md",
+    "Algorithms/Graphs",
+    "ADT's/Trees/patterns/Binary Trees/Diameter.md",
+    "Algorithms/Recursion/2 - Backtracking/1 - Backtracking Introduction.md",
     "Archive/Algorithms/Backtracking/~$tter Combinations of a Phone Number.docx",
     "Archive/Algorithms/Backtracking/~$cktracking.docx",
-    "ADT's/Graphs/notes/5 - Topological Sort.md",
-    "ADT's/Graphs/notes/3 - Graph Traversal.md",
-    "ADT's/Graphs/notes/2 - Graph Implementation.md",
-    "ADT's/Graphs/notes/1 - Graph Terminology.md",
     "ADT's/Array/notes/01 - Array Declaration & Initialization.md",
-    "Algorithms/3 - Recursion/2 - Backtracking/Backtracking Algorithm.md",
-    "Algorithms/3 - Recursion/2 - Backtracking/1 - Backtracking Introduction.md",
-    "Algorithms/3 - Recursion/1 - Recursion/4 - Recurrence Relations.md",
-    "Algorithms/3 - Recursion/1 - Recursion/3 - Tail Recursion.md",
-    "Algorithms/3 - Recursion/1 - Recursion/2 - Three Laws of Recursion.md",
-    "Algorithms/3 - Recursion/1 - Recursion/1- Recursion Introduction.md",
-    "Algorithms/4 - Searching/Binary Search/2 - Binary Search Template.md",
-    "Algorithms/4 - Searching/Binary Search/1 - Binary Search Introduction.md",
+    "Algorithms/Recursion/2 - Backtracking/Backtracking Algorithm.md",
+    "Algorithms/Recursion/1 - Recursion/4 - Recurrence Relations.md",
+    "Algorithms/Recursion/1 - Recursion/3 - Tail Recursion.md",
+    "Algorithms/Recursion/1 - Recursion/2 - Three Laws of Recursion.md",
+    "Algorithms/Recursion/1 - Recursion/1- Recursion Introduction.md",
+    "Algorithms/Searching/Binary Search/2 - Binary Search Template.md",
+    "Algorithms/Searching/Binary Search/1 - Binary Search Introduction.md",
     "Algorithms/1 - Technical Questions/4 - DIY - Optimize and Solve Technique.md",
     "Algorithms/1 - Technical Questions/3 - BUD - Optimize and Solve Techniques.md",
     "Algorithms/1 - Technical Questions/2 - Walking Through Technical Questions.md",
     "Algorithms/1 - Technical Questions/1 - Preparing for a Technical Interview.md",
-    "Algorithms/3 - Recursion/1 - Recursion",
-    "Algorithms/3 - Recursion/2 - Backtracking",
-    "Algorithms/7 - Sliding Window/2 - Substring Sliding Window.md",
-    "Algorithms/7 - Sliding Window/1 - Sliding Window Technique.md",
-    "Algorithms/4 - Searching/Binary Search",
-    "Algorithms/11 - Dynamic Programming/2 - Kadane's Algorithm.md",
-    "Algorithms/11 - Dynamic Programming/1 - Intro to Dynamic Programming.md",
-    "Algorithms/1 - Technical Questions",
-    "Algorithms/7 - Sliding Window",
-    "Algorithms/3 - Recursion",
-    "Algorithms/4 - Searching",
-    "Algorithms/11 - Dynamic Programming",
-    "ADT's/Trees/patterns/Binary Trees/Height & Depth.md",
-    "ADT's/Trees/patterns/Binary Trees/Diameter.md",
-    "ADT's/Trees/patterns/Binary Trees/Balanced.md",
-    "ADT's/Trees/notes/Trie/Untitled.md",
-    "Archive/Algorithms/Recursion/Recurrence Equations/Screen Shot 2020-06-06 at 8.30.28 PM.png",
-    "Algorithms/Recursion/Recurrence Equations/Screen Shot 2020-06-06 at 8.30.28 PM.png"
+    "Algorithms/Recursion/1 - Recursion",
+    "Algorithms/Recursion/2 - Backtracking",
+    "Algorithms/Sliding Window/2 - Substring Sliding Window.md",
+    "Algorithms/Sliding Window/1 - Sliding Window Technique.md",
+    "Algorithms/Searching/Binary Search",
+    "Algorithms/Dynamic Programming/2 - Kadane's Algorithm.md",
+    "Algorithms/1 - Technical Questions"
   ]
 }

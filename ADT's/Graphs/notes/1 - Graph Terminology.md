@@ -1,3 +1,6 @@
+Great resource:
+https://courses.cs.washington.edu/courses/cse373/20su/
+
 ## **Familiar Graphs**
 
 You are undoubtedly familiar with graphs. 
@@ -10,10 +13,12 @@ Here are some common examples:
 The following figure is a simple line graph. This is an example of a type of graph.
 It is a set of **points** that are joined by **lines**.
 
-![[Pasted image 20230828084610.png]]
+![Line graph|500](https://media.geeksforgeeks.org/wp-content/uploads/20230727184028/Line-Graph-05-min.png)
 
 Clearly, graphs provide a way to illustrate data.
 However, graphs also represent the **relationships** among data items.
+
+___
 ## **Graph**
 A graph **_G = (V, E)_** is defined by two sets:
 1. V = a set of **vertices**
@@ -37,11 +42,12 @@ Two vertices are **_neighbors_** or **_adjacent_** if they are connected by an e
 
 If the graph contains an edge (_v_, _v_) from a vertex to itself, then the path _v_, _v_ is sometimes referred to as a **loop**.
 ##### Graph Example
-![[Pasted image 20230828085052.png]]
-
+![[Pasted image 20240917162847.png]]
 V = {a,b,c,d}
 E = {(a,c), (b,c), (b,d), (c,d)}
 G = {V, E}
+
+___
 ## **Path**
 A **_path_** from vertex **_a_** to **_b_** is a **sequence of edges** that can be followed starting from **_a_** to reach **_b_**. We denote a path as ***P***.
 
@@ -52,14 +58,13 @@ The path P from nodes a to b can be defined by
 
 Note that there can be **multiple possible paths** between any two nodes.
 
-The **_path_** **_weight_** is the **sum of the weights of the edges traversed on the path**.
-- For a weighted graph, find the shortest path (using edge weights).
-
 The **_path_** **_length_** is the **number of vertices or edges traversed on the path**.
 - For an unweighted graph, find the shortest path (fewest edges required).
-##### Path Example
 
-![[Pasted image 20230828085845.png]]
+The **_path_** **_weight_** is the **sum of the weights of the edges traversed on the path**.
+- For a weighted graph, find the shortest path (using edge weights).
+##### Path Example
+![[Pasted image 20240917163413.png]]
 
 1. List two possible paths from **V to Z:**
 	P = {b, h} (edges)
@@ -86,32 +91,39 @@ The **_path_** **_length_** is the **number of vertices or edges traversed on th
 ##### Simple Path
 A **_simple path_ repeats no vertices** (except the 1st vertex can be the same as the last).
 
-P = {Seattle, Salt Lake City, San Francisco, Dallas}
-P = {Seattle, Salt Lake City, Dallas, San Francisco, Seattle}
+![[Pasted image 20240917163745.png]]
+
+P (Seattle->Seattle) = {Seattle, Salt Lake City, San Francisco, Dallas, Chicago, Seattle}
+P (Seattle -> Chicago) = {Seattle, Salt Lake City, San Francisco, Dallas, Chicago}
 ##### Cycle
 A **_cycle_** is a path that **starts and ends at the same vertex**.
 
-P = {Seattle, Salt Lake City, Dallas, San Francisco, Seattle}
+P (Seattle->Seattle) = {Seattle, Salt Lake City, San Francisco, Dallas, Chicago, Seattle}
 
 A **_simple cycle_** is a cycle that does not repeat edges or vertices, except the **first is also the last**.
 ##### Acyclic Graph
 A graph with no cycles is called an **Acyclic Graph**.
 
-P = {Seattle, Salt Lake City, San Francisco, Dallas}
+P (Seattle -> Chicago) = {Seattle, Salt Lake City, San Francisco, Dallas, Chicago}
 
 A directed graph with no cycles is called a **Directed** **Acyclic Graph**.
 An undirected graph with no cycles is called an **Undirected** **Acyclic Graph**.
-## **Graph Classifications**
 
+___
+## **Degree**
+The degree of a vertex is the number of edges touching it.
+Each vertex has a separate
+1. **In-degree**: Number of incoming edges
+2. **Out-degree**: Number of outgoing edges
+
+___
+## **Graph Classifications**
 There are many different types of graphs. 
 Commonly, graphs fall into the following categories:
 
 1. Directed or Undirected
-
 2. Reachable, Connected, Unconnected, or Complete
-
 3. Weighted or Unweighted
-
 4. Cyclic or Acyclic
 
 Choose the kinds required for problem and determined by data
@@ -125,12 +137,6 @@ Vertex _w_ is **adjacent** to _v_ if and only if (_v_, _w_) ∈ _E_.
 
 In a digraph (directed graph), an edge is an ordered pair
 - Thus: (u,v) and (v,u) are not the same edge
-
-**Degree**
-The degree of a vertex is the number of edges touching it.
-In a directed graph, each vertex has a separate
-1. **In-degree**: Number of incoming edges
-2. **Out-degree**: Number of outgoing edges
 
 **Directed Graph Diagram**
 A Directed Edge from v -> w is drawn with an arrow
@@ -252,7 +258,7 @@ A **linked list** is just a graph with some restrictions:
 
 Each node has an in and out degree of at most 1.
 
-![[Pasted image 20230828092224.png]]
+![Linked List|600](https://cdn.programiz.com/sites/tutorial2program/files/linked-list-concept.png)
 ##### Binary Tree
 A **binary tree** is a graph with some restrictions:
 1. Directed
@@ -261,5 +267,4 @@ A **binary tree** is a graph with some restrictions:
 
 Each node has an in and out degree of at most 2.
 There is exactly one path from the root to every other node in the tree.
-
-![[Pasted image 20230828092339.png]]
+![Binary Tree|300](https://cdn.programiz.com/sites/tutorial2program/files/complete-binary-tree_0.png)

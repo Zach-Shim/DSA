@@ -8,7 +8,7 @@ There are two common data structures we can use to represent it:
 
 Notice the **adjacency** term. What does it mean for two vertices to be adjacent?
 
-Two vertices are said to be **_adjacent_** if there is simply an **_edge_** between them.
+Two vertices are said to be **_adjacent_** if there is simply share an **_edge_**.
 That is, vertex **_j_** is **_adjacent_** to **_i_** if and only if (_i_, _j_) ∈ _E_.
 
 In a digraph (directed graph), edges are a **_one-way_** connection between vertices _v_ -> _w_.
@@ -195,14 +195,14 @@ Two of the most commonly performed graph operations are:
 	
 	If there were 100 vertices in a graph, but a vertex only is adjacent to 5 nodes, you only have to traverse the 5 adjacent nodes.
 ##### **Runtime Comparison**
-| Operations | Adjacency List | Adjacency Matrix |
-| ---------- | -------------- | -----------------|
-| find all neighbors of *v* | degree(v) | V |  
-| is *w* adjacent to *v*? | degree(v) | 1 |
-| add a vertex | 1 | V<sup>2</sup> |
-| add an edge | 1 | 1 |
-| remove a vertex | 1 | V<sup>2</sup> |
-| remove an edge | degree(v) | 1 |
+| Operations                | Adjacency List | Adjacency Matrix |     |
+| ------------------------- | -------------- | ---------------- | --- |
+| find all neighbors of *v* | degree(v)      | V                |     |
+| is *w* adjacent to *v*?   | degree(v)      | 1                |     |
+| add a vertex              | 1              | 1                |     |
+| add an edge               | 1              | 1                |     |
+| remove a vertex           | degree(v)      | 1                |     |
+| remove an edge            | degree(v)      | 1                |     |
 ### **Space Requirements**
 **Adjacency Matrix**
 An **adjacency matrix** is an appropriate representation if the graph is **dense**: |_E_| = O(|_V_|<sup>2</sup>).
