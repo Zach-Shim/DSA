@@ -3,6 +3,7 @@ A **graph traversal** is an algorithm that visits all vertices that it can reach
 In other words, a graph traversal that starts at vertex **_v_** will visit all vertices **_u_** for which there is a path between **_v_** and **_u_**.
 
 The **_order_** vertices are traversed in depends on the **_type_** of graph you are traversing.
+## Types of Graphs
 
 1. **Connected Graph**
 	A connected graph traversal can visit every vertex in the graph.
@@ -22,13 +23,30 @@ A **tree traversal** always visits all nodes in a tree.
 There are different ways to traverse a tree, such as inorder, preorder, and postorder.
 
 A graph traversal may or may not visit all nodes in a graph, depending on the type of graph and the problem constraints.
-## **Graph Traversal Algorithms**
+
+## Graph Traversal Problems
 
 ##### **Searching for Paths**
 A common operation on graphs is searching for a path from one vertex to another.
 1. Sometimes, we just want **any** path (or want to know if a path exists).
 2. Sometimes, we want to minimize path length (# of edges).
 3. Sometimes, we want to minimize path cost (sum of edge weights).
+
+>[!Important]
+>There are 3 main traversal algorithms we want to implement:
+>1. s-t connectivity problem	
+>	1. Does a path exist?
+>	   
+>2. s-t ***unweighted*** shortest path problem
+>	1. Unweighted
+>	2. Shortest path
+>	   
+>3. s-t ***weighted*** shortest path problem
+>	1. Weighted
+>	2. Shortest path
+
+## **Graph Traversal Algorithms**
+
 ##### Graph Traversal Algorithms
 From these use cases, there are three main types graph-traversal algorithms:
 1. **Depth-First Traversal (DFS)**
@@ -67,8 +85,6 @@ Both algorithms begin at vertex _s_.
 DFS is **guaranteed** to find a path **if one exists**. 
 This does not mean it finds the most optimal (i.e, shortest) path.
 
-DFS marks **_visited_** nodes so it does not revisit the same node twice.
-
 >[!Important]
 >**DFS** explores each possible path as far as possible before backtracking to another path.
 
@@ -83,6 +99,15 @@ Depth-first paths from **_a_** to all other vertices (assuming ABC edge order):
 - to f: {a,b,e,f}
 - to g: {a,d,g}
 - to h: {a,d,g,h}
+##### **Mark Visited Nodes**
+DFS marks **_visited_** nodes so it does not revisit the same node twice.
+
+If we perform DFS on a graph:
+- We need to be careful to **_avoid cycles_**.
+- To do this, when we visit a vertex _v_, we **_mark it visited_**, since now we have been there, and we recursively call depth-first search on all adjacent vertices that are not already marked.
+
+>[!Important]
+> We mark nodes as visited so we know which ones we have already visited. This helps us avoid cycles.
 ##### **DFS Properties
 1. **Discovery:**
     DFS is guaranteed to find a path if one exists.
@@ -94,78 +119,94 @@ Depth-first paths from **_a_** to all other vertices (assuming ABC edge order):
 
 3. **Optimality:**
    If the graph is undirected and unconnected, or directed and not strongly connected, this strategy might fail to visit some nodes.
-##### **Mark Visited Nodes**
+
 If this process is performed on a **binary tree**
 - All tree vertices are systematically visited in a total of _O_(|_E_|) time, since |_E+1_| = _O_(|_V_|).
   (note this case is not the same for graphs, because nodes are not required to have an out-degree of 2)
-
-If we perform this process on an **arbitrary graph**
-- We need to be careful to **_avoid cycles_**.
-- To do this, when we visit a vertex _v_, we **_mark it visited_**, since now we have been there, and we recursively call depth-first search on all adjacent vertices that are not already marked.
-
-We implicitly assume that for undirected graphs every edge (_v_, _w_) appears twice in the adjacency lists: once as (_v_, _w_) and once as (_w_, _v_).
-
->[!Important]
-> We mark nodes as visited so we know which ones we have already visited. This helps us avoid cycles.
 ##### **Traversal Order**
 How do we determine **which unvisited adjacent vertex to visit**?
-- DFS does not have a standard for the order in which vertices adjacent to _v_ are visited.
-- One possibility is to visit the vertices adjacent to _v_ in natural sorted order (e.g., alphabetic, or numerically increasing).
+- A vertex may have more than one adjacent neighbor we need to visit.
+
+DFS does not have a standard for the order in which vertices adjacent to _v_ are visited.
+- One possibility is to visit the vertices adjacent to _v_ in ***natural sorted order*** (e.g., alphabetic, or numerically increasing).
 - This possibility is natural either when an adjacency matrix represents the graph or when the nodes in each linked chain of an adjacency list are linked in sorted order.
 
 >[!Important]
 > DFS does not have a standard for the order in which unvisited adjacent nodes are visited. A common solution is use natural sorted order.
 ##### **DFS Recursive Algorithm**
+
+**Proposed Solution:**
 ```Java
 // Main function that calls helper DFS function
-public void dfs(Vertex v1, Vertex v2) {
-	path = dfs(v1, target, {});
+public void dfs(Vertex s, Vertex t) {
+	path = dfs(s, t, {});
 }
 
 // Traverses a graph beginning at vertex v using recursive DFS
-private void dfs(Vertex current, Vertex target, Path path) {
+private bool dfs(Vertex s, Vertex t, Path path) {	
+	path.add(s);
 	
-	path += current;
-	v.visited = true;
-	
-	if(current is equal to target) {
-		a path is found!
+	if(s == t) {      // if current node is equal to target node
+		return true;
 	}
 	
-	for(each Vertex u adjacent to Vertex current) {
-		if(u has not been visited) {
-			dfs(u, target, path);
+	for(Vertex v : s.neighbors) {   // each Vertex v adjacent to Vertex u
+		if(dfs(v, t, path)) {       // if v has not been visited
+			return true;
 		}
 	}
+	return false;
 }
 ```
 
 The **_path_** parameter above is used if you want to have the path available as a list once you are done.
 
-By recursively calling the procedures **only on nodes that have not been visited**, we guarantee that we do not loop indefinitely (in the case of cyclic graphs).
+There is a clear problem with this proposed solution. 
 
-We then search for an unmarked node, apply a depth-first traversal there, and continue this process until there are no unmarked nodes.
-##### **DFS Iterative Algorithm**
+![[Pasted image 20241007111729.png]]
+
+It does not check for nodes we have already visited? This will result in an infinite loop.
+
+Let's say we traverse the next neighbor with the lowest vertex value.
+
+Does 0 == 7? No; if(connected(1, 7) return true; 
+Does 1 == 7? No; if(connected(0, 7) return true; 
+Does 0 == 7? ...
+
 ```Java
-//  Traverses a graph beginning at vertex v by using iterative depth-first search
-public void dfs(Vertex v) {
-	s = a new empty stack;
-	s.push(v);                                         
-	Mark v as visited;
+// Main function that calls helper DFS function
+public void dfs(Vertex s, Vertex t) {
+	path = dfs(s, t, {});
+}
+
+// Traverses a graph beginning at vertex v using recursive DFS
+Set<Vertex> visited;
+private bool dfs(Vertex s, Vertex t, Path path) {	
+	path.add(s);
 	
-	while(!s.isEmpty()) {
-		v = s.pop();                                          // pop 
-		if(no unvisited vertices adjacent to v) {
-			s.pop();                                          // backtrack
-		} else {
-			select an unvisited vertex u adjacent to vertex v and s.push(u);
-			mark u as visited;
+	if(s == t) {      // if current node is equal to target node
+		return true;
+	}
+	
+	visited.add(s);
+	
+	for(Vertex v : s.neighbors) {   // each Vertex v adjacent to Vertex u
+		if(!visited.contains(s)) {  // checked if neighbor has been visited 
+			if(dfs(v, t, path)) {   // if v has not been visited
+				return true;
+			}
 		}
 	}
+	return false;
 }
 ```
 
-Note how the iterative version is very similar to the recursive version. We simply replace the implicit call stack with an explicit stack to keep track of unvisited nodes.
+By recursively calling the procedures **only on nodes that have not been visited**, we guarantee that we do not loop indefinitely (in the case of cyclic graphs).
+
+We then search for an unmarked node, apply a depth-first traversal there, and continue this process until there are no unmarked nodes.
+
+It will explore one option “all the way down” before coming back to try other options - Many possible orderings: 
+	{0, 1, 2, 5, 6, 9, 7, 8, 4, 3} or {0, 1, 4, 3, 2, 5, 8, 6, 7, 9} are both possible.
 ##### **Example**
 Figure 20-12 shows the contents of the stack (either recursive call stack or iterative data structure stack) as we traverse the graph in Figure 20-11 using DFS. 
 
@@ -175,9 +216,8 @@ The traversal visits the vertices in the following order: _a, b, c, d, g, e, f, 
 The vertex from which a depth-first traversal embarks is the vertex that it visited most recently.
 This _last visited, first explored_ strategy is reflected both in the explicit stack of vertices that the iterative dfs uses and in the implicit stack of vertices that the recursive dfs generates with its recursive calls.
 
-![[Pasted image 20230828150721.png]]
-![[Pasted image 20230828150724.png]]
-
+![[Pasted image 20241007112156.png]]
+![[Pasted image 20241007112209.png]]
 ##### **Runtime**
 Because this strategy guarantees that each edge is encountered only once, the total time to perform the traversal is _O_(|_E_| + |_V_|), as long as adjacency lists are used.
 
@@ -194,12 +234,19 @@ BFS always returns the **shortest path** (the one with the **fewest edges**) bet
 Breadth-First Search finds a path between two nodes by 
 1. taking **one step down all paths** (visiting all **adjacent** vertexes) 
 2. adding all of the adjacent nodes to a queue
-3. and then immediately **backtracking**.
+3. processing the next node from the queue
 
 It is often implemented by maintaining a **queue** of **vertices to visit**.
+This allows us to explore a graph **“layer by layer”**.
+We can visit closer nodes first, instead of following one choice all the way to the end like DFS.
+
+![[Pasted image 20241007112513.png]]
 
 >[!Important]
 >BFS is an iterative graph traversal algorithm that finds the shortest path between two nodes in an unweighted graph. It is implemented by adding a nodes adjacent neighbors to a queue.
+
+##### **Mark Visited Nodes**
+Just like DFS, it is important that BFS marks nodes as **_visited_** so it does not revisit the same node twice. This allows us to avoid ***cycles***.
 ##### BFS Properties
 1. **Optimality**
    Always finds the **shortest path** (fewest edges).
@@ -210,185 +257,58 @@ It is often implemented by maintaining a **queue** of **vertices to visit**.
    Harder to reconstruct the actual sequence of vertices or edges in the path once you find it.
    Conceptually, BFS is exploring many possible paths in parallel, so it's not easy to store a path array/list in progress.
    Solution: We can use extra space to keep track of the path by storing predecessors for each vertex in an array/list (each vertex can store a reference to the previous vertex on a path).
-##### Example Walkthrough
-**Input:**
-We are given a starting vertex, _s_.
-
-**Goal:**
-We would like to find the shortest path from _s_ to all other vertices.
-
-**Return:**
-The **length** of the shortest path from _s_ to all other vertices.
-
-**Constraints:**
-We are only interested in the number of edges contained on the path, so there are no weights on the edges. This is a special case of the weighted shortest-path problem, since we could assign all edges a weight of 1.
-
-For now, suppose we are interested only in the **length** of the shortest paths, not in the actual paths themselves. Keeping track of the actual paths will turn out to be a matter of simple bookkeeping.
-
-**Diagram:**
-Figure 9.10 shows an unweighted graph, _G_.
-
-![[Pasted image 20240917224649.png]]
-
-1. Step 1:
-   Suppose we choose _s_ to be v3. 
-   Immediately, we can tell that the shortest path from _s_ to v3 is then a path of length 0.
-   We can mark this information, obtaining the graph in Figure 9.11.
-   
-![[Pasted image 20240917224704.png]]
-
-2. Step 2:
-   Now we can start looking for all vertices that are a **distance 1 away** **from** **_s_**.
-   These can be found by looking at the **vertices that are** **adjacent** to **_s_**.
-   If we do this, we see that v1 and v6 are one edge from _s_.
-   This is shown in Figure 9.12.
-   
-![[Pasted image 20240917225131.png]]
-
-3. Step 3:
-   We can now find vertices whose **shortest path from _s_ is exactly 2**.
-   We find all the vertices adjacent to v1 and v6 (the vertices at distance 1), whose shortest paths are not already known.
-   This search tells us that the shortest path to v2 and v4 is 2.
-   Figure 9.13 shows the progress that has been made so far.
-   
-![[Pasted image 20240917225306.png]]
-
-4. Step 4:
-   Finally, examine the vertices adjacent to the recently evaluated v2 and v4.
-   This search tells us that the shortest path to v5 and v7 is 3.
-   All vertices have now been calculated, and so Figure 9.14 shows the final result of the algorithm.
-   
-![[Pasted image 20240917225404.png]]
-
-This strategy for searching a graph is known as **breadth-first search**.
-It operates by processing vertices in layers:
-
-1. The vertices closest to the start are evaluated first
-   and
-2. The most distant vertices are evaluated last
-
-This is much the same as a **level-order traversal for trees**.
 ##### **Implementing BFS**
 
-**Variables**
-The following figure shows the initial configuration of the table that our algorithm will use to keep track of its progress.
+```java
+// Main function that calls helper DFS function
+public void bfs(Graph graph, Vertex s) {
+	path = dfs(graph, s);
+}
 
-| vertex | visited | distance | previous |
-| --- | --- | --- | --- |
-| v1 | F | INF | null |
-| v2 | F | INF | null |
-| v3 | F | 0 | null |
-| v4 | F | INF | null |
-| v5 | F | INF | null |
-| v6 | F | INF | null |
-| v7 | F | INF | null |
-
-For each **vertex**, we will keep track of three pieces of information.
-1. **`Visited` is a Boolean that tracks if the vertex has been processed**
-   Initially, all entries are **not known**, including the start vertex.
-   When a vertex is marked known, we have a guarantee that no cheaper path will ever be found, and so processing for that vertex is essentially complete.
-   
-2. **`Distance` from s**
-   Initially all vertices are unreachable except for s, whose path length is 0.
-
-3. **`Previous` is a tracker variable that holds the node preceding the current node in the path** 
-   This will allow us to print the actual paths by tracing the path backwards from the final node.
-##### BFS First Try Pseudocode
-
-```Java
-void unweighted(Vertex s) {
-	for each Vertex v in Graph g {
-		v.dist = INFINITY;
-		v.visited = false;
-	}
+// Traverses a graph beginning at vertex v using recursive BFS
+private bool bfs(Graph graph, Vertex s) {
+	Queue<Vertex> perimeter = new Queue<>(); // keep track of 'outer edge'
+	Set<Vertex> visited = new Set<>();
 	
-	s.distance = 0;
+	perimeter.add(s);  // kick of algorithm by adding start
+	visited.add(s);
 	
-	for(int currDist = 0; currDist < NUM_VERTICES; currDist++) {
-		for each Vertex v {
-			if(!v.visited && v.distance == currDist) {
-				v.visited = false;
-				for each Vertex w adjacent to v {
-					if(w.distance == INFINITY) {
-						w.distance = currDist + 1;
-						w.previous = v;
-					}
-				}
+	while(!perimeter.isEmpty()) {          // grab one element at a time
+	    Vertex from = perimeter.remove();  // get next node to process
+		for(Edge edge : graph.edgesFrom(from)) {  // look at all neighbors 
+			Vertex to = edge.to();
+			if(!visited.contains(to)) {    // has neighbor been visited
+			    perimeter.add(to);         // add unvisited neighbors
+				visited.add(s);
 			}
-			
 		}
-		
 	}
+	
+	return graph.size() == visited.size();
 }
 ```
 
-This is a good first attempt, but there is a lot of potential repeated work.
-An obvious inefficiency is that the outside for loop continues until NUM_VERTICES − 1, even if all the vertices become known much earlier.
+The ***properties of a queue*** are exactly what gives us this incredibly cool behavior.
+As long as we explore an ***entire layer*** before moving on (and we will, with a queue) the next layer will be fully built up and waiting for us by the time we finish!
+Keep going until perimeter is empty.
 
-We can remove the inefficiency by keeping a queue. 
+![[Pasted image 20241007114008.png]]
+## **DFS vs BFS**
 
-At the start of the pass, the queue contains only vertices of distance currDist. When we add adjacent vertices of distance currDist + 1, since they enqueue at the rear, we are guaranteed that they will not be processed until after all the vertices of distance currDist have been processed. 
-1. We know that we can immediately access all vertices adjacent to the source vertex with a path of length one.
-2. We then search the neighbors of all of these vertices to find paths of length two.
-3. … and, so on, until all edges have been considered.
-##### **BFS Better Pseudocode**
+DFS and BFS are extremely similar, the only difference is the data structure we use for node traversal.
 
-```Java
-public void bfs(Vertex v1, Vertex v2)
-    
-    // Initialize queue and add v1 (head) onto the queue and mark it visited
-    queue = initialize empty queue
-    add v1 to queue
-    mark v1 as visited
+DFS and BFS are just two approaches for ordering a graph traversal. They are really just techniques for iterating over a set of nodes.
 
-    while(queue is not empty) {
-        v = queue.removeFirst(); // remove top node
-        if (v1 is v2) {          // check to find the shortest path from v1 to v2
-            a path is found!     // get path by following .previous back to v
-        }
-        
-        for(each unvisited neighbor n of v) {
-            mark n as visited             // avoid cycles by marking n as visited
-            queue.addLast(n);             // add n to queue
-        }
-    
-    }
-    
-    // path is not found
-```
-##### **BFS Traversal Pseudocode**
+We can change the BFS Queue to a Stack to make it become DFS! (and vise versa)
 
-If there are multiple vertices you must traverse at each BFS interval, traverse over every node that is currently in the queue. This is a common use case in tree traversal.
+![[Pasted image 20241007112928.png]]
 
-```Java
-public void bfs(Graph g)
+![[Pasted image 20241007113032.png]]
+## **DFS and BFS Runtime**
 
-    // Initialize queue and add {vs} onto the queue and mark them as visited
-    queue = initialize empty queue
-    add all starter vertices {vs} from g to queue
-    mark vertices in {vs} as visited
-
-    while(queue is not empty) {
-        n = queue size
-        for(every node currently in queue) {
-            v = queue.removeFirst();                // remove current node   
-            for(each adjacent neighbor n of v) {
-                if(n is unvisited) {
-                    mark n as visited                // avoid cycles by marking n as visited
-                    queue.addLast(n);                // add n to queue
-                }
-            }
-        }
-    }
-```
-
-##### **DFS vs BFS**
 DFS uses less memory than BFS
 DFS is easier to reconstruct the path when found
 DFS does not always find the shortest path (for unweighted graphs). BFS does.
-
-Thus, we have solved the **Single-Source Unweighted Shortest-Path Problem**.
-## **DFS and BFS Runtime**
 
 **Adjacency List**
 What is the expected runtime of DFS and BFS, in terms of the number of vertices V and the number of edges E?
@@ -409,5 +329,262 @@ This implies that the algorithm requires O(V + E) time for an adjacency list, wh
 This is O(E) if the graph is connected, since there must be at least O(V) edges in that case.
 
 An adjacency matrix holds O(V<sup>2</sup>) indices. We must visit every index, even if it does not hold a vertex. Therefore, DFS/BFS for an adjacency matrix requires O(V<sup>2</sup>) time.
+## Level-Order Traversal
 
-![[Pasted image 20230828161120.png]]
+Level-order traversal is an extension of BFS.
+
+Sometimes you have an algorithm that does not simply have a single start point like the s-t connectivity problem.
+
+If there are multiple vertices you must traverse at each BFS interval, traverse over every node that is currently in the queue. 
+
+This use case is a common use case in tree traversal.
+
+We call this **level-order traversal**. Each time we process a node, we process all of it's neighbors at once.
+
+You can think of it as processing the ***entire layer*** before moving on to the next one, instead of just processing one node in the layer at a time.
+
+```java
+// Main function that calls helper DFS function
+public void bfs(Graph graph, Vertex s) {
+	path = dfs(graph, s);
+}
+
+// Traverses a graph beginning at vertex v using recursive BFS
+private bool bfs(Graph graph, Vertex s) {
+	// add all starting vertices
+	Queue<Vertex> perimeter = new Queue<>(); 
+	for(Vertex vertex : graph.vertices()) {
+		if(vertex meets started condition i.e. in-degree of 0) {
+			perimeter.add(vertex);
+		}
+	}
+	
+	Set<Vertex> visited = new Set<>();
+	while(!perimeter.isEmpty()) {
+		    Vertex from = perimeter.remove();  
+			for(Edge edge : graph.edgesFrom(from)) {
+				Vertex to = edge.to();
+				if(!visited.contains(to)) {
+				    perimeter.add(to);
+					visited.add(s);
+				}
+			}
+	}
+	
+	return graph.size() == visited.size();
+}
+```
+
+## Unweighted Shortest Path Problem
+
+**Problem Statement:**
+Given source vertex s and a target vertex t, how long is the shortest path from s to t? What edges make up that path?
+
+This is a little harder, but still totally doable! We can use a traversal algorithm, but just need a way to keep ***track of how far each node is from the start***. 
+
+Sounds like a job for BFS! We just need to add a couple mode tracker data structures.
+
+**Data Structures:**
+1. **`Visited`** 
+   Tracks if a node has been visited.
+   
+2. **`edgeTo`**
+   Map stores ***backpointers***: each vertex remembers what vertex was used to arrive at it! 
+   Allows us to print the path from t to s.
+   
+   Another implementation option: store them as fields of the nodes themselves
+
+3. **`distTo`**
+   Map that tracks the distance from a starting node to the current node. 
+
+**Implementation:**
+```java
+// Main function that calls helper DFS function
+public void bfs(Graph graph, Vertex s) {
+	path = dfs(graph, s);
+}
+
+// Traverses a graph beginning at vertex v using recursive BFS
+private Map<Vertex, Edge> bfs(Graph graph, Vertex s) {
+	Queue<Vertex> perimeter = new Queue<>();
+	Set<Vertex> visited = new Set<>();
+	
+	perimeter.add(s);
+	visited.add(s);
+	
+	Map<Vertex, Edge> edgeTo = new HashMap<>();
+	Map<Vertex, Double> distTo = new HashMap<>();
+	
+	edgeTo.add(s);  // kick of algorithm by adding start
+	distTo.add(s);
+	
+	while(!perimeter.isEmpty()) {          // grab one element at a time
+	    Vertex from = perimeter.remove();  // get next node to process
+		for(Edge edge : graph.edgesFrom(from)) {  // look at all neighbors 
+			Vertex to = edge.to();         // get unvisited neighbor
+			if(!visited.contains(to)) {    // has neighbor been visited
+				edgeTo.put(to, edge); 
+				distTo.put(to, distTo.get(from) + 1);
+			    perimeter.add(to);         // add unvisited neighbors
+				visited.add(s);
+			}
+		}
+	}
+	
+	return edgeTo;
+}
+```
+
+![[Pasted image 20241007135458.png]]
+
+The closest layer gets processed first, then the next, then the next.
+
+>[!Key Intuition] 
+>BFS works because: 
+>1. IF we always process the closest vertices first,
+>2. THEN the first path we discover to a new vertex will always be the shortest!
+
+As soon as BFS enqueues a vertex, the final path to that vertex has been chosen! Never re-evaluate its path.
+
+**What about the Target Vertex?**
+This modification on BFS didn’t mention the target vertex at all! 
+
+Instead, it calculated the shortest path and distance from start to every other vertex 
+This is called the ***shortest path tree*** (SPT)
+In this implementation, the SPT is made up of distances and backpointers.
+
+What is the length of shortest path from A to D?
+1. Lookup D in distTo map. You get the path length 2 returned.
+2. Lookup D in edgeTo map. You get D's backpointer (previous node in path). 
+3. Build up backwards from edgeTo map.
+	1. start at D, 
+	2. follow backpointer to B, 
+	3. follow backpointer to A
+4. Our shortest path is A -> B -> D
+
+All our shortest path algorithms will have this property - If you only care about a specific target node, you can sometimes stop building the SPT early!
+
+Thus, we have solved the **Single-Source Unweighted Shortest-Path Problem**.
+
+## Weighted Shortest Path Problem
+
+**Problem Statement:**
+Given source vertex s and target vertex t, what path from s to t minimizes the total weight of its edges? How long is that path, and what edges make it up?
+
+1. DFS is suitable for finding if a path **exists**
+2. BFS is suitable for finding the shortest path in **unweighted** graphs
+3. ??? is suitable for finding the shortest path in **weighted** graphs
+
+![[Pasted image 20241007140449.png]]
+##### Dijkstra's Algorithm
+Dijkstra's algorithm was made by famous computer scientist Edsger Dijkstra.
+
+Dijkstra's solves the "**single-source shortest-path** (SSSP)" problem in weighted graphs.
+The algorithm finds the **minimum-weight path** between a pair of vertices in a weighted graph. SSSP is one of the most frequent graph problem encountered in real-life. 
+
+Example: In a graph where vertices are cities and weighted edges are roads between cities, Dijkstra's algorithm can be used to find the shortest route from one city to any other
+
+>[!Main Idea]
+>Reminiscent of BFS, but adapted to handle weights.
+>Grow the set of nodes whose shortest distance has been computed.
+>Nodes not in the set will have a “best distance so far”.
+
+BFS processed nodes in a level-by-level order. Each level got processed before the next level. In Dijkstra's, it is similar, except we process nodes in order of their shortest paths. 
+
+In BFS, each time we process a node, it will be the ***next edge in the layer***.
+In Dijkstra's, each time we process a node, it will be the ***edge with the next smallest weight***.
+
+Therefore, the weight of the shortest path from **s** to **v** where **(s, v) ∈ E** is not necessarily the weight of their shared edge **(s, v)**. This single shared edge may have a larger weight than taking an alternative path with more edges that have smaller total weights.
+##### Dijkstra’s Algorithm: Idea
+
+![[Pasted image 20241007142841.png]]
+
+The objective of the SSSP problem is to find the shortest path weight from **s** to each vertex **u**, where **s** ∈ **V** and **u** ∈ **V**, denoted as **δ(s, u)** (δ is pronounced as 'delta') and also the actual shortest path from **s** to **u**.
+
+The path weight of a path **p** is simply the summation of edge weights along that path.
+
+The weight of the shortest path from **s** to **s** is trivial: 0.
+The weight of the shortest path from **s** to any unreachable vertex is also trivial: +∞.
+
+At each step: 
+1. Pick closest unknown vertex v
+2. Add it to the “cloud” of known vertices
+3. Update “best-so-far” distances for vertices with edges from v
+## Dijkstra's Algorithm Pseudocode
+
+```Java
+public void dijkstras(Graph graph, Vertex start) {
+	Map<Vertex, Edge> edgeTo = new HashMap<>();
+	Map<Vertex, Double> distTo = new HashMap<>();
+	
+	// Initialize distTo with all nodes mapped to INF, except start to 0
+	for (Vertex v in graph) { 
+		distTo.put(distTo.get(v), INF);
+	}
+	distTo.replace(start, 0);
+	
+	// all vertices, ordered by distance
+	PriorityQueue<Vertex> pq = new PriorityQueue<>();
+	
+	while (!pq.isEmpty()) {
+		
+		Vertex u = pq.removeMin();  // let u be the closest unknown vertex
+		
+		for(Edge edge : graph.edgesFrom(from)) {  // look at all neighbors 
+			
+			Vertex v = edge.to();                 // get neighbor
+			
+			int oldDist = distTo.get(v);
+			int newDist = distTo.get(u) + edge.weight;
+			if (oldDist < newDist) {
+				
+				distTo.replace(v, newDist);  // update min distance
+				edgeTo.put(v, u);            // update backpointer
+				
+				if (pq.contains(v))
+					pq.changePriority(v, newDist);
+				else
+					pq.add(v, newDist);
+			}
+		}
+	}
+	
+	reconstruct path from v2 back to v1, following previous pointers.
+```
+
+A minheap data structure is required to make Dijkstra's work.
+- DFS requires a Stack
+- BFS requires a Queue
+- Dijkstra's requires a minheap
+
+A minheap gives them each vertex a distance “priority” value.
+This makes it fast to grab the one with the smallest distance and lets us update that distance as we discover new, better paths.
+
+We break the algorithm into three steps:
+1. Initialize the vertex information
+2. Initialize a minheap
+3. While the minheap is not empty
+	1. Get the updated weights of the nodes in the minheap - we visit the adjacent node with the smallest weight + edge
+
+##### Dijkstra's Runtime
+
+![[Pasted image 20241007150552.png]]
+
+**O(|V| log |V| + |E| log |V|)**
+
+Why can’t we simplify further? 
+We don’t know if |V| or |E| is going to be larger, so we don’t know which term will dominate. 
+Sometimes we assume |E| is larger than |V|, so |E|log|V| dominates. But not always true!
+##### **Runtime of Shortest Path Problems**
+
+There are two general types of shortest path algorithms:
+
+1. Shortest Path in Unweighted Graphs
+
+	Unweighted Shortest-Path Problem 
+	O(|E|+|V|) time
+
+2. Shortest Path in Weighted Graphs
+
+	Weighted Shortest-Path Problem assuming there ***are no* negative edges**
+	O(|V| log |V| + |E| log |V|) time
