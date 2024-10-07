@@ -4,16 +4,16 @@
     "type": "split",
     "children": [
       {
-        "id": "586480a4274bd739",
+        "id": "f2809cf56b5ca065",
         "type": "tabs",
         "children": [
           {
-            "id": "158609d1d704aad2",
+            "id": "3810c8354e68ba10",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "ADT's/Graphs/notes/1 - Graph Terminology.md",
+                "file": "ADT's/Graphs/notes/2 - Graph Implementation.md",
                 "mode": "source",
                 "source": false
               }
@@ -69,7 +69,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 299.5
+    "width": 299.5,
+    "collapsed": true
   },
   "right": {
     "id": "9b4c8d4914f03fa3",
@@ -85,7 +86,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "ADT's/Graphs/notes/1 - Graph Terminology.md",
+                "file": "ADT's/Graphs/notes/2 - Graph Implementation.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +103,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "ADT's/Graphs/notes/1 - Graph Terminology.md",
+                "file": "ADT's/Graphs/notes/2 - Graph Implementation.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +126,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "ADT's/Graphs/notes/1 - Graph Terminology.md"
+                "file": "ADT's/Graphs/notes/2 - Graph Implementation.md"
               }
             }
           }
@@ -147,26 +148,27 @@
       "terminal:Open terminal": false
     }
   },
-  "active": "158609d1d704aad2",
+  "active": "3810c8354e68ba10",
   "lastOpenFiles": [
-    "ADT's/Graphs/notes/2 - Graph Implementation.md",
+    "Pasted image 20241004155835.png",
+    "Pasted image 20241004155655.png",
+    "Pasted image 20241004155613.png",
+    "ADT's/Graphs/notes/1 - Graph Terminology.md",
     "ADT's/Graphs/notes/3 - Graph Traversal.md",
+    "ADT's/Graphs/notes/5 - Topological Sort.md",
+    "ADT's/Graphs/notes/2 - Graph Implementation.md",
+    "Pasted image 20241004135521.png",
+    "Pasted image 20241004135150.png",
+    "Pasted image 20241004134847.png",
+    "Pasted image 20241004134845.png",
+    "Pasted image 20241004133643.png",
+    "images/Graphs/Pasted image 20241003113457.png",
+    "images/Graphs/Pasted image 20241003140555.png",
+    "images/Graphs/Pasted image 20241003131513.png",
     "ADT's/Graphs/notes/4 - Weighted Shortest Path.md",
     "Algorithms/Graphs/patterns/Graph Traversals.md",
-    "ADT's/Graphs/notes/5 - Topological Sort.md",
-    "ADT's/Graphs/notes/1 - Graph Terminology.md",
-    "images/Graphs/Pasted image 20240917224649.png",
-    "images/Graphs/Pasted image 20240917225404.png",
-    "images/Graphs/Pasted image 20240917225306.png",
-    "images/Graphs/Pasted image 20240917225131.png",
-    "images/Graphs/Pasted image 20240917224704.png",
-    "images/Graphs/Pasted image 20240917162847.png",
     "images/Graphs",
     "images",
-    "images/Graphs/Pasted image 20240917171130.png",
-    "images/Graphs/Pasted image 20240917163745.png",
-    "images/Graphs/Pasted image 20240917163413.png",
-    "Pasted image 20240917162048.png",
     "Algorithms/Graphs/problems/Island Perimeter.md",
     "Algorithms/Graphs/patterns",
     "Technical Problem Framework.md",
@@ -193,7 +195,6 @@
     "Algorithms/Sliding Window/2 - Substring Sliding Window.md",
     "Algorithms/Sliding Window/1 - Sliding Window Technique.md",
     "Algorithms/Searching/Binary Search",
-    "Algorithms/Dynamic Programming/2 - Kadane's Algorithm.md",
     "Algorithms/1 - Technical Questions"
   ]
 }

@@ -16,6 +16,7 @@ An edge is an ordered pair, thus, _j_ is adjacent to _i_, but _i_ is not adjacen
 
 In an undirected graph, _j_ is adjacent to _i_ AND _i_ is adjacent to _j_. 
 
+---
 ## **Adjacency Matrix**
 
 ##### ADT
@@ -39,40 +40,52 @@ Therefore, a graph that has **_V_** vertices can have a maximum **_V_**<sup>2</s
 - The graph can have up to **_25_** edges
 
 An adjacency matrix is an appropriate representation if the graph is **complete** or **dense**:
-|_E_| = O(V<sup>2</sup>).
+	**|_E_| = O(V<sup>2</sup>)**
+
+![[Pasted image 20241004155655.png]]
+![[Pasted image 20241004155613.png]]
+##### Time Complexity
+
+![[Pasted image 20241004155835.png]]
 
 ##### **Weighted vs. Unweighted Adjacency Matrix**
 
-**Unweighted Matrix**
+###### **Unweighted Matrix**
 In an **unweighted graph**, we can let `matrix[i][j]` be the **number of edges** joining vertex **_i_** and **_j_**. This value is usually 1 or 0, but there can be more than one edge between two nodes.
 
-If there is single edge between vertices _i_ and _j_, the value will be 1.
-If there is no edge between vertices _i_ and _j_, the value will be 0.
-
-**Weighted Matrix**
+- If there is single edge between vertices _i_ and _j_, the value will be ***1***.
+- If there is no edge between vertices _i_ and _j_, the value will be ***0***.
+###### **Weighted Matrix**
 In a **weighted graph**, we can let `matrix[i][j]` be the **weight** that is between vertices **_i_** and **_j_**.
 If there is an edge between vertices _i_ and _j_, the value will be the **_weight_** value that labels the edge.
 
-If there is no edge between vertices _i_ and _j_, the value stored will be **_infinity_** (or a very large number, in practice).
+- If there is a single edge between vertices _i_ and _j_, the value stored will be the ***weight of the edge***.
+- If there is no edge between vertices _i_ and _j_, the value stored will be **_infinity_** (or a very large number, in practice).
 
-**Diagonal Entries**
-The diagonal entry `matrix[i][i]` corresponds to the number of loops (self-connecting edges) at vertex **_i_**. 
-This is often disallowed in graph implementations, therefore, there will often be a diagonal strike from the top left to the bottom right of matrix with 0 values.
+> [!Diagonal Entries]
+> The diagonal entry `matrix[i][i]` corresponds to the number of loops (self-connecting edges) at vertex **_i_**. 
+> 
+> This is often disallowed in graph implementations, therefore, there will often be a diagonal strike from the top left to the bottom right of matrix with 0 values.
 
-![[Pasted image 20230828140832.png]]
 ##### **Directed vs. Undirected Adjacency Matrix**
 
-**Undirected Matrix**
-Remember that in an **undirected graph**, each edge can be traversed in either direction
-- An undirected graph with edge (_v_, _w_) also has edge (_w_, _v_)
-- _v_ -> _w_ and _w_ -> _v_
+###### **Undirected Matrix**
+Remember that in an **undirected graph**, each edge can be traversed in either direction.
+An undirected graph with edge (_v_, _w_) also has edge (_w_, _v_). 
+Both of these edges will have the same value in the adjacency matrix:
+
+- _v_ -> _w_
+- _w_ -> _v_
 
 An adjacency matrix for an **undirected graph is symmetrical** (across the diagonal strike).
-- This means that every index in the matrix, `matrix[i][j]` has a symmetrical pair at `matrix[j][i]`.
-- That is, `matrix[i][j]` equals `matrix[j][i]`.
+For every index in the matrix, `matrix[i][j]`, there is a symmetrical pair at `matrix[j][i]`.
 
-**Directed Matrix**
-In a **directed graph**, we simply list all of the edges between nodes, without the symmetry. The edge value between two nodes will depend on whether the graph is weighted vs. unweighted.
+- `matrix[i][j]`
+- has the same value as
+- `matrix[j][i]`
+###### **Directed Matrix**
+In a **directed graph**, we simply list all of the edges between nodes, without the symmetry. 
+The edge value between two nodes will depend on whether the graph is weighted vs. unweighted.
 ##### Example 1: Weighted Undirected Graph
 The following figure is an example of a **_weighted_** **_undirected_** graph and adjacency matrix.
 For nodes that don’t have an edge, their values are infinity.

@@ -5,103 +5,118 @@ A **topological sort** is an ordering of vertices in a **_directed acyclic graph
 Given digraph _G_ = (_V_, _E_), find a linear ordering of vertices such that for all edges (_v_, _w_) in _E_, _v_ precedes _w_ in the ordering.
 
 A **topological ordering** is any node sequence that does not violate this ordering.
-## **Cycles Are Not Possible**
+## DAG
+
+In a DAG, **Cycles Are Not Possible**.
 
 A **topological ordering is not possible if the graph has a cycle**, since for two vertices _v_ and _w_ on the cycle, _v_ precedes _w_ and _w_ precedes _v_.
 
 These two nodes would be in a deadlock since you v would need to be before w, and w would need to be before v. It is impossible for both to be true at once.
+## Invariants
+
+**Invariant 1:**
+If G has a topological order, then G is a DAG.
+If G is a DAG, then G has a topological order.
+
+![[Pasted image 20241003115156.png]]
+
+**Invariant 2:**
+If G is a DAG, then G has at least one node with no incoming edges (a source node).
+If G were to not have any nodes with no incoming edges, that would imply it has cycles.
 ## **Example: Course Prerequisites**
 
-The following graph in represents a course prerequisite structure at a Miami University.
+The following **DAG** represents a course prerequisite structure at UW.
 
-![[Pasted image 20230830145939.png]]
+![[Pasted image 20241003113457.png]]
+
+The following graph is a possible (one of many possible) **topological orderings**.
+
+![[Pasted image 20241003114833.png]]
 
 A directed edge (_v_, _w_) indicates that course _v_ must be completed before course _w_ may be attempted. This means that _v_ is a prerequisite to _w_.
 
-For example, MAC3311 and MAD2104 (in that order) are prerequisites to COP3530.
-A **topological ordering** of these courses is **_any course_ _sequence_** that does not violate the prerequisite requirement.
+For example, CSE142 and CSE143 (in that order) are prerequisites to CSE374.
 
-This means that there may be **more than one possible ordering**.
-For example, you could first take COP3210 and COP3337 if you wanted to take COP3530.
-## Example 2: Full Topological Ordering
+A **topological ordering** of these courses is **_any course_ _sequence_** that does not violate the prerequisite requirement. This means that there may be **more than one possible ordering**.
 
-Let’s say we want to find a topological ordering for _v6_ the following graph
-
-![[Pasted image 20230830150244.png]]
-
-v1, v2, v5, v4, v3, v7, v6 is a possible topological ordering
-v1, v2, v5, v4, v7, v3, v6 is a possible topological ordering
-
-## Example 3: Plating Food
-
-Let’s say we want to find a topological ordering for _plating food_ in following graph
-Notice how all _w_ (adjacent nodes) come after a _v_ (prerequisite):
-- Butter Toast comes after Toast Bread.
-- Plate Food transitively comes after Butter Toast.
-- etc.
-
-![[Pasted image 20230830150433.png]]
-
-![[Pasted image 20230830150438.png]]
-
+For example, you could first take MATH126 and CSE143 instead if you wanted to take CSE374.
 ## Algorithm
 
-1. **Steph 1:** Identify vertices that have **no incoming edges**.
-    
-    We define the **indegree** of a vertex _v_ as the **number of incoming edges** (_u_, _v_).
-    
-    ![[Pasted image 20230830150703.png]]
-    
-    The indegree of A and F are **zero**
-    
-    If all vertices have incoming edges (no vertices with indegree 0), then the graph has at least one **cycle** (cyclic graph).
-    
-    ![[Pasted image 20230830150731.png]]
-    
-    Compute the indegrees of all vertices in the graph.
-    Select any vertex with indegree 0.
-    
-    ![[Pasted image 20230830150813.png]]
-    
-2. **Step 2:** **Remove** **this vertex** of indegree 0 and all its **outgoing edges** from the graph.
-    
-    ![[Pasted image 20230830150841.png]]
-    
-    Place this vertex in the **output** or print it.
+We will have three main data structures:
+1. Adjacency list (represents graph)
+2. In-Degree array
+3. In-Degree 0 Queue
+#### **Step 1:** Initialize in-degree in an array. (O|E|)
 
-3. **Step 3:** **Reduce** the indegree of all **adjacent vertices**.
+We define the **in-degree** of a vertex _v_ as the **number of incoming edges** (_u_, _v_).
 
-4. **Step 4:** Repeat Steps 1, 2, and 3 **until the graph is empty**
+Iterate over all vertices in the graph, and store their in-degree in an array. 
+We call this our **in-degree array**.
 
-![[Pasted image 20230830151035.png]]
+#### Step 2: Initialize a queue with all in-degree 0 vertices. (O|V|)
 
-Repeat Step 1, we identify that B and F have an indegree of 0
-Repeat Step 2, we delete B and its outgoing edges, then place it in the output
+We first need to identify vertices that have **no incoming edges**.
 
-![[Pasted image 20230830151046.png]]
+Since a DAG will naturally one or more nodes with no incoming edges, these will be the starting points of our topological sorting algorithm.
 
-Repeat Step 1, we identify that C and F have an indegree of 0
-Repeat Step 2, we delete F and its outgoing edges, then place it in the output
+If all vertices have incoming edges (no vertices with in-degree 0), then the graph has at least one **cycle** (cyclic graph).
 
-![[Pasted image 20230830151054.png]]
+![[Pasted image 20241003131513.png]]
 
-Repeat Step 1, we identify that C has an indegree of 0
-Repeat Step 2, we delete C and its outgoing edges, then place it in the output
+The in-degree of A and F are **zero**.
 
-![[Pasted image 20230830151103.png]]
+For all vertices with in-degree 0, we add them to a **queue**. 
 
-Repeat for D and E
+This queue keeps track of nodes that have an in-degree of 0. We only ever process nodes with an in-degree of 0. This ensures a topological ordering.
+
+While running the algorithm, we will decrease the in-degree of a node N's adjacent neighbors anytime we process N. 
+
+If any of these neighbors reach an in-degree of 0, we add them to the queue.
+#### Step 3: While the queue is not empty: (O|V|)
+
+##### Step 3a: Deque and output/save a vertex. (O|1|)
+##### Step 3b: Reduce the in-degree of all adjacent vertices by 1. (O|E|)
+##### Step 3c: Enqueue any vertices whose in-degree became 0. (O|E|)
+
+![[Pasted image 20241003140555.png]]
+## Time Complexity
+
+1. Initialize the indegree array by storing each vertex’s indegree (# of incoming edges)
+
+>O(|E|)
+
+2. Find a vertex with indegree 0 from the indegree array and output it
+
+>O(|V|)
+
+3. Mark and output vertex
+
+>O(|V|)
+
+4. Reduce indegree of all vertices adjacent to vertex
+
+>O(|E|)
+
+5. Time to perform topological sort (if using adjacency lists)
+
+> O( |E| + |V| )
+
+**Total:** 
+(O|E|) + (O|V|) + ((O|E|) + (O|V|))
+
+**Actual:** 
+(O|E|) + (O|V|)
+
+The time complexity is **linear**!
 ## **Topological Sort Implementation**
 
-##### **Variables**
+##### **Data Structures**
 
-**Indegree Array:** We store each vertex’s indegree (# of incoming edges) in an array.
+**In-degree Array:** We store each vertex’s in-degree (# of incoming edges) in an array.
 
 **Adjacency List:** Read graph into an adjacency list, and each vertex is the head of a list which holds all edges adjacent to the vertex.
 
-![[Pasted image 20230830151254.png]]
-
-![[Pasted image 20230830151302.png]]
+Queue: Keep track of current in-degree 0 nodes we want to process. This ensures we process vertices in a topological sorted order.
 ##### **Algorithm**
 
 **Assumptions**
@@ -149,28 +164,3 @@ void topsort() throws CycleFoundException {
 }
 ```
 
-**Example**
-![[Pasted image 20230831094336.png]]
-
-![[Pasted image 20230831094339.png]]
-## Time Complexity
-
-1. Initialize the indegree array by storing each vertex’s indegree (# of incoming edges)
-
->O(|E|)
-
-2. Find a vertex with indegree 0 from the indegree array and output it
-
->O(|V|)
-
-3. Mark and output vertex
-
->O(|V|)
-
-4. Reduce indegree of all vertices adjacent to vertex
-
->O(|E|)
-
-5. Time to perform topological sort (if using adjacency lists)
-
-> O( |E| + |V| )
