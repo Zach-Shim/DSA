@@ -11,14 +11,11 @@
             "id": "b99c22264375cf86",
             "type": "leaf",
             "state": {
-              "type": "canvas",
+              "type": "markdown",
               "state": {
-                "file": "Untitled.canvas",
-                "viewState": {
-                  "x": 0,
-                  "y": 0,
-                  "zoom": 0
-                }
+                "file": "ADT's/Graphs/notes/1 - Graph Terminology.md",
+                "mode": "source",
+                "source": false
               }
             }
           },
@@ -34,8 +31,7 @@
               }
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -162,25 +158,25 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "6f3be957f692dc8c",
+  "active": "b99c22264375cf86",
   "lastOpenFiles": [
-    "Untitled.canvas",
     "Technical Problem Framework.md",
+    "Textbooks/Data Abstraction & Problem Solving with C++.pdf",
     "ADT's/Graphs/notes/1 - Graph Terminology.md",
+    "Graph Problems/Walls and Gates.docx",
+    "Graph Problems/Surrounded Regions.docx",
+    "Graph Problems/Rotting Oranges.docx",
+    "Graph Problems/Number of Provinces (Connected Components).docx",
+    "Graph Problems/Number of Islands.docx",
+    "Graph Problems",
+    "untitled folder",
+    "Textbooks/Mark Allen Weiss - Data Structures and Algorithm Analysis in Java, 3rd Edition-Pearson Education Canada (2011).pdf",
+    "Textbooks",
+    "Untitled.canvas",
     "Algorithms/Graphs/problems/Number of Islands.md",
     "Algorithms/Graphs/problems/Rotting Oranges.md",
     "Algorithms/Graphs/problems/Island Perimeter.md",
-    "~$mber of Islands.docx",
-    "~$mber of Provinces (Connected Components).docx",
-    "~$lls and Gates.docx",
-    "~$rrounded Regions.docx",
-    "~$tting Oranges.docx",
     "Algorithms/Graphs/patterns/Graph Traversals.md",
-    "Untitled",
-    "Walls and Gates.docx",
-    "Surrounded Regions.docx",
-    "Rotting Oranges.docx",
-    "Number of Provinces (Connected Components).docx",
     "images/Pasted image 20241004155835.png",
     "images/Pasted image 20241004155655.png",
     "images/Pasted image 20241004155613.png",
