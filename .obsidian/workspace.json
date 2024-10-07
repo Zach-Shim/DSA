@@ -1,39 +1,55 @@
 {
   "main": {
-    "id": "d534d535be20e1ef",
+    "id": "350e3076c072fba1",
     "type": "split",
     "children": [
       {
-        "id": "f2809cf56b5ca065",
+        "id": "abf8879c9a63cedb",
         "type": "tabs",
         "children": [
           {
-            "id": "3810c8354e68ba10",
+            "id": "b99c22264375cf86",
+            "type": "leaf",
+            "state": {
+              "type": "canvas",
+              "state": {
+                "file": "Untitled.canvas",
+                "viewState": {
+                  "x": 0,
+                  "y": 0,
+                  "zoom": 0
+                }
+              }
+            }
+          },
+          {
+            "id": "6f3be957f692dc8c",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "ADT's/Graphs/notes/2 - Graph Implementation.md",
+                "file": "ADT's/Graphs/notes/1 - Graph Terminology.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
   },
   "left": {
-    "id": "051c395c60f97bc5",
+    "id": "9cb0dafc40642e4f",
     "type": "split",
     "children": [
       {
-        "id": "3f7dde2ce3aa051e",
+        "id": "b1f589ceaa22f08a",
         "type": "tabs",
         "children": [
           {
-            "id": "3e94858990dc021e",
+            "id": "dd0bd213bedb25a8",
             "type": "leaf",
             "state": {
               "type": "file-explorer",
@@ -43,7 +59,7 @@
             }
           },
           {
-            "id": "7c682fa8c1544533",
+            "id": "9363f4e6e9e008cc",
             "type": "leaf",
             "state": {
               "type": "search",
@@ -58,7 +74,7 @@
             }
           },
           {
-            "id": "4682600d44c8fe70",
+            "id": "12c12332c0d49319",
             "type": "leaf",
             "state": {
               "type": "bookmarks",
@@ -69,24 +85,23 @@
       }
     ],
     "direction": "horizontal",
-    "width": 299.5,
-    "collapsed": true
+    "width": 300
   },
   "right": {
-    "id": "9b4c8d4914f03fa3",
+    "id": "62aedc841707a988",
     "type": "split",
     "children": [
       {
-        "id": "5da8a4e13fabdb9f",
+        "id": "aadd5b620283fa08",
         "type": "tabs",
         "children": [
           {
-            "id": "f4b869263c3f1a6d",
+            "id": "cd79c0427820bc19",
             "type": "leaf",
             "state": {
               "type": "backlink",
               "state": {
-                "file": "ADT's/Graphs/notes/2 - Graph Implementation.md",
+                "file": "ADT's/Graphs/notes/1 - Graph Terminology.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -98,19 +113,19 @@
             }
           },
           {
-            "id": "7d3602284f68b6cb",
+            "id": "fb53ebc3ede1520d",
             "type": "leaf",
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "ADT's/Graphs/notes/2 - Graph Implementation.md",
+                "file": "ADT's/Graphs/notes/1 - Graph Terminology.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
             }
           },
           {
-            "id": "6bf3d506ca64aa75",
+            "id": "5c0f92556c8ba557",
             "type": "leaf",
             "state": {
               "type": "tag",
@@ -121,12 +136,12 @@
             }
           },
           {
-            "id": "0604b80bd6a05ac2",
+            "id": "8239cd5c3be268a9",
             "type": "leaf",
             "state": {
               "type": "outline",
               "state": {
-                "file": "ADT's/Graphs/notes/2 - Graph Implementation.md"
+                "file": "ADT's/Graphs/notes/1 - Graph Terminology.md"
               }
             }
           }
@@ -144,57 +159,56 @@
       "canvas:Create new canvas": false,
       "daily-notes:Open today's daily note": false,
       "templates:Insert template": false,
-      "command-palette:Open command palette": false,
-      "terminal:Open terminal": false
+      "command-palette:Open command palette": false
     }
   },
-  "active": "3810c8354e68ba10",
+  "active": "6f3be957f692dc8c",
   "lastOpenFiles": [
-    "Pasted image 20241004155835.png",
-    "Pasted image 20241004155655.png",
-    "Pasted image 20241004155613.png",
+    "Untitled.canvas",
+    "Technical Problem Framework.md",
     "ADT's/Graphs/notes/1 - Graph Terminology.md",
-    "ADT's/Graphs/notes/3 - Graph Traversal.md",
-    "ADT's/Graphs/notes/5 - Topological Sort.md",
-    "ADT's/Graphs/notes/2 - Graph Implementation.md",
-    "Pasted image 20241004135521.png",
-    "Pasted image 20241004135150.png",
-    "Pasted image 20241004134847.png",
-    "Pasted image 20241004134845.png",
-    "Pasted image 20241004133643.png",
-    "images/Graphs/Pasted image 20241003113457.png",
+    "Algorithms/Graphs/problems/Number of Islands.md",
+    "Algorithms/Graphs/problems/Rotting Oranges.md",
+    "Algorithms/Graphs/problems/Island Perimeter.md",
+    "~$mber of Islands.docx",
+    "~$mber of Provinces (Connected Components).docx",
+    "~$lls and Gates.docx",
+    "~$rrounded Regions.docx",
+    "~$tting Oranges.docx",
+    "Algorithms/Graphs/patterns/Graph Traversals.md",
+    "Untitled",
+    "Walls and Gates.docx",
+    "Surrounded Regions.docx",
+    "Rotting Oranges.docx",
+    "Number of Provinces (Connected Components).docx",
+    "images/Pasted image 20241004155835.png",
+    "images/Pasted image 20241004155655.png",
+    "images/Pasted image 20241004155613.png",
+    "images/Pasted image 20241004135521.png",
+    "images/Pasted image 20241004135150.png",
+    "images/Pasted image 20241004134847.png",
+    "images/Pasted image 20241004134845.png",
+    "images/Pasted image 20241004133643.png",
     "images/Graphs/Pasted image 20241003140555.png",
     "images/Graphs/Pasted image 20241003131513.png",
-    "ADT's/Graphs/notes/4 - Weighted Shortest Path.md",
-    "Algorithms/Graphs/patterns/Graph Traversals.md",
-    "images/Graphs",
-    "images",
-    "Algorithms/Graphs/problems/Island Perimeter.md",
-    "Algorithms/Graphs/patterns",
-    "Technical Problem Framework.md",
-    "ADT's/Problem Template.md",
-    "Algorithms/Graphs",
-    "ADT's/Trees/patterns/Binary Trees/Diameter.md",
-    "Algorithms/Recursion/2 - Backtracking/1 - Backtracking Introduction.md",
-    "Archive/Algorithms/Backtracking/~$tter Combinations of a Phone Number.docx",
-    "Archive/Algorithms/Backtracking/~$cktracking.docx",
-    "ADT's/Array/notes/01 - Array Declaration & Initialization.md",
+    "Algorithms/Sliding Window/2 - Substring Sliding Window.md",
+    "Algorithms/Sliding Window/1 - Sliding Window Technique.md",
+    "Algorithms/Searching/Binary Search/2 - Binary Search Template.md",
+    "Algorithms/Searching/Binary Search/1 - Binary Search Introduction.md",
     "Algorithms/Recursion/2 - Backtracking/Backtracking Algorithm.md",
+    "Algorithms/Recursion/2 - Backtracking/1 - Backtracking Introduction.md",
     "Algorithms/Recursion/1 - Recursion/4 - Recurrence Relations.md",
     "Algorithms/Recursion/1 - Recursion/3 - Tail Recursion.md",
     "Algorithms/Recursion/1 - Recursion/2 - Three Laws of Recursion.md",
     "Algorithms/Recursion/1 - Recursion/1- Recursion Introduction.md",
-    "Algorithms/Searching/Binary Search/2 - Binary Search Template.md",
-    "Algorithms/Searching/Binary Search/1 - Binary Search Introduction.md",
-    "Algorithms/1 - Technical Questions/4 - DIY - Optimize and Solve Technique.md",
-    "Algorithms/1 - Technical Questions/3 - BUD - Optimize and Solve Techniques.md",
-    "Algorithms/1 - Technical Questions/2 - Walking Through Technical Questions.md",
-    "Algorithms/1 - Technical Questions/1 - Preparing for a Technical Interview.md",
-    "Algorithms/Recursion/1 - Recursion",
-    "Algorithms/Recursion/2 - Backtracking",
-    "Algorithms/Sliding Window/2 - Substring Sliding Window.md",
-    "Algorithms/Sliding Window/1 - Sliding Window Technique.md",
-    "Algorithms/Searching/Binary Search",
-    "Algorithms/1 - Technical Questions"
+    "Algorithms/Dynamic Programming/2 - Kadane's Algorithm.md",
+    "Algorithms/Dynamic Programming/1 - Intro to Dynamic Programming.md",
+    "ADT's/Trees/patterns/Binary Trees/Height & Depth.md",
+    "ADT's/Trees/patterns/Binary Trees/Diameter.md",
+    "ADT's/Trees/patterns/Binary Trees/Balanced.md",
+    "ADT's/Trees/notes/Trie/Untitled.md",
+    "ADT's/Trees/notes/Trie/2 - Trie Operations.md",
+    "ADT's/Trees/notes/Trie/1 - Trie Introduction.md",
+    "ADT's/Trees/notes/General Trees/2 - General Tree Introduction.md"
   ]
 }

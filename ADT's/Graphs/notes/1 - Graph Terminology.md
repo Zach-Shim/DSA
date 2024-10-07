@@ -1,6 +1,5 @@
 Great resource:
 https://courses.cs.washington.edu/courses/cse373/20su/
-
 ## **Familiar Graphs**
 
 You are undoubtedly familiar with graphs. 
@@ -15,8 +14,7 @@ It is a set of **points** that are joined by **lines**.
 
 ![Line graph|500](https://media.geeksforgeeks.org/wp-content/uploads/20230727184028/Line-Graph-05-min.png)
 
-Clearly, graphs provide a way to illustrate data.
-However, graphs also represent the **relationships** among data items.
+Clearly, graphs provide a way to illustrate data, and the **relationships** among data items.
 
 ___
 ## **Graph**
@@ -54,7 +52,7 @@ If the graph contains an edge (_v_, _v_) from a vertex to itself, then the path 
 
 ___
 ## **Path**
-A **_path_** ***P***, from vertex **_a_** to **_b_** is a **sequence of edges** that can be followed. 
+A **_path_** ***P***, is a **sequence of edges** that can be followed from vertex **_a_** to **_b_**. 
 We start from **_a_**, followed by 0 or more edges, until we reach the target node, **_b_**. 
 
 The path ***P*** from nodes ***a*** to ***b*** can be defined by
@@ -149,7 +147,7 @@ In a digraph (directed graph), an edge is an ordered pair
 A Directed Edge from v -> w is drawn with an arrow
 A Directed Edge can only be traversed in the direction of the arrow
 
-**Example**:
+**Example:**
 The set of edges E = {
 	(A,B), 
 	(A,C), 
@@ -157,9 +155,17 @@ The set of edges E = {
 	(B,C), 
 	(D,C)
 }
+```mermaid
+graph TD
+    A --> B
+    A --> C
+    A --> D
+    B --> C
+    D --> C
+```
 
 (A,B) ∈ E and (D,C) ∈ E, but (C,D) ∉ E
-Note: A node can have an edge to itself, so (A,A) would be valid
+Note: A node can have an edge to itself, so (A,A) could be valid
 
 ---
 ## **Undirected Graphs**
@@ -175,13 +181,22 @@ An undirected graph with edge (_v_, _w_) also has edge (_w_, _v_).
 Edges have no direction, so there are no arrows
 We can traverse an edge in either direction
 
-**Example**:
+**Example:**
 E = {
 	(A,B), (A,C), (A,D),
 	(B,A), (B,D),
 	(C,A), (C, D),   
 	(D,A), (D,B), (D,C),  
  }
+
+```mermaid
+graph TD
+    A --- B
+    A --- C
+    A --- D
+    B --- D
+    C --- D
+```
 
 A is adjacent to B and B is adjacent to A
 If (A,B) ∈ E then (B,A) ∈ E
@@ -195,13 +210,45 @@ Graphs can be classified by whether or not their edges have weights.
 Weighted Graphs have edges have an associated cost (weight) that show the cost of traversing the edge.
 
 Example: weights are distances between cities
+```mermaid
+graph LR
+    A[New York]
+    B[Chicago]
+    C[Miami]
+    D[Los Angeles]
+    E[Seattle]
 
+    A --789--- B
+    A --1089--- C
+    A --2789--- D
+    B --2013--- D
+    B --2013--- E
+    C --2733--- D
+    D --1135--- E
+```
 
 **Unweighted Graphs**
 Unweighted Graphs have edges can be thought of as having equal weight (e.g., all 0, all 1, etc.). Edges simply show connections.
 
 Example: flight map between airports
+```mermaid
+graph TD
+    JFK[JFK - New York]
+    LAX[LAX - Los Angeles]
+    ORD[ORD - Chicago]
+    DFW[DFW - Dallas]
+    MIA[MIA - Miami]
+    SEA[SEA - Seattle]
 
+    JFK --- ORD
+    JFK --- MIA
+    ORD --- SEA
+    ORD --- DFW
+    SEA --- LAX
+    DFW --- LAX
+    MIA --- LAX
+    JFK --- LAX
+```
 ---
 ## **Connected and Complete**
 
@@ -212,33 +259,64 @@ You could also phrase it as 'if you can reach any other vertex from the current 
 This means each pair of **_distinct vertices_ _has a path_** **between them**.
 In a connected graph, you can get from any vertex to any other vertex by following this path.
 
-Example 1:
+```mermaid
+graph TD
+    subgraph Directed Connected Graph
+        A1((A)) -->|1| B1((B))
+        A1 -->|2| C1((C))
+        B1 -->|3| D1((D))
+        C1 -->|4| D1
+        D1 -->|5| E1((E))
+        E1 -->|6| A1
+    end
 
-
-Example 2:
-
+    subgraph Undirected Connected Graph
+        A2((A)) ---|1| B2((B))
+        A2 ---|2| C2((C))
+        B2 ---|3| D2((D))
+        C2 ---|4| D2
+        D2 ---|5| E2((E))
+        A2 ---|6| E2
+    end
+```
 ##### **Strongly Connected Directed Graph**
 A **directed** graph is **strongly connected** if there is a directed path from every vertex to every other vertex.
 
 Example 1: Strongly Connected
+```mermaid
+graph TD
+    subgraph "Strongly Connected Directed Graph"
+        A1((A)) -->|1| B1((B))
+        B1 -->|2| C1((C))
+        C1 -->|3| D1((D))
+        D1 -->|4| E1((E))
+        E1 -->|5| A1
+        A1 -->|6| D1
+        B1 -->|7| E1
+        C1 -->|8| A1
+    end
 
-
-Example 2: Strongly Connected
-
+    subgraph "Undirected Equivalent Graph"
+        A2((A)) ---|1| B2((B))
+        B2 ---|2| C2((C))
+        C2 ---|3| D2((D))
+        D2 ---|4| E2((E))
+        E2 ---|5| A2
+        A2 ---|6| D2
+        B2 ---|7| E2
+        C2 ---|8| A2
+    end
+```
 ##### **Weakly Connected Directed Graph**
 If a directed graph is not strongly connected, but the underlying graph works as an undirected graph, then the graph is said to be **weakly connected**.
-
-Example 3: Weakly Connected
-
 ##### **Disconnected Graphs**
 A **disconnected graph** is a graph in which there are **any** **two vertices that do not have a connecting path** between them.
-
 ##### **Complete Graphs**
 In a **complete graph**, each pair of distinct vertices has an edge between them.
 This means that all vertices **have** **an edge with every other vertex in the graph**.
 A **complete graph is also connected**, but the reverse is not true.
 
-
+---
 ## **Loops and Cycles**
 
 ##### Cycle 
@@ -255,8 +333,7 @@ Note: many graphs don’t allow loops.
 ##### Linked List
 A **linked list** is just a graph with some restrictions:
 1. Directed
-2. Unweighted
-3. Acyclic
+2. Acyclic
 
 Each node has an in and out degree of at most 1.
 
@@ -264,9 +341,9 @@ Each node has an in and out degree of at most 1.
 ##### Binary Tree
 A **binary tree** is a graph with some restrictions:
 1. Directed
-2. Unweighted
-3. Acyclic
+2. Acyclic
 
-Each node has an in and out degree of at most 2.
+Binary Trees are known as DAG's (directed acyclic graphs) with the added constraint that each node has an in-degree and out-degree of at most 2.
+
 There is exactly one path from the root to every other node in the tree.
 ![Binary Tree|300](https://cdn.programiz.com/sites/tutorial2program/files/complete-binary-tree_0.png)
