@@ -1,6 +1,7 @@
 ## **Definition**
 
 A **topological sort** is an ordering of vertices in a **_directed acyclic graph (DAG)_**.
+A graph has a topological ordering if it is a DAG. A DAG can have multiple orderings.
 
 Given digraph _G_ = (_V_, _E_), find a linear ordering of vertices such that for all edges (_v_, _w_) in _E_, _v_ precedes _w_ in the ordering.
 
@@ -45,7 +46,7 @@ For example, you could first take MATH126 and CSE143 instead if you wanted to ta
 We will have three main data structures:
 1. Adjacency list (represents graph)
 2. In-Degree array
-3. In-Degree 0 Queue
+3. Queue for vertices with in-Degree 0
 #### **Step 1:** Initialize in-degree in an array. (O|E|)
 
 We define the **in-degree** of a vertex _v_ as the **number of incoming edges** (_u_, _v_).
@@ -82,24 +83,24 @@ If any of these neighbors reach an in-degree of 0, we add them to the queue.
 ## Time Complexity
 
 1. Initialize the indegree array by storing each vertex’s indegree (# of incoming edges)
-
->O(|E|)
+   
+   O(|E|)
 
 2. Find a vertex with indegree 0 from the indegree array and output it
-
->O(|V|)
+   
+   O(|V|)
 
 3. Mark and output vertex
-
->O(|V|)
+   
+   O(|V|)
 
 4. Reduce indegree of all vertices adjacent to vertex
-
->O(|E|)
+   
+   O(|E|)
 
 5. Time to perform topological sort (if using adjacency lists)
-
-> O( |E| + |V| )
+   
+   O( |E| + |V| )
 
 **Total:** 
 (O|E|) + (O|V|) + ((O|E|) + (O|V|))
@@ -116,7 +117,7 @@ The time complexity is **linear**!
 
 **Adjacency List:** Read graph into an adjacency list, and each vertex is the head of a list which holds all edges adjacent to the vertex.
 
-Queue: Keep track of current in-degree 0 nodes we want to process. This ensures we process vertices in a topological sorted order.
+**Queue**: Keep track of current in-degree 0 nodes we want to process. This ensures we process vertices in a topological sorted order.
 ##### **Algorithm**
 
 **Assumptions**

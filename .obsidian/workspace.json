@@ -8,18 +8,43 @@
         "type": "tabs",
         "children": [
           {
+            "id": "494ab2448d9bf75d",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "ADT's/Graphs/notes/6 - Disjoint Sets.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "3a2d1fb96a1eebaa",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Algorithms/Sliding Window/2 - Substring Sliding Window.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
             "id": "ffc2c590af236f09",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "ADT's/Graphs/notes/4 - Topological Sort.md",
+                "file": "Algorithms/Graphs/patterns/Graph Traversals.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -85,7 +110,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "ADT's/Graphs/notes/4 - Topological Sort.md",
+                "file": "Algorithms/Sliding Window/2 - Substring Sliding Window.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +127,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "ADT's/Graphs/notes/4 - Topological Sort.md",
+                "file": "Algorithms/Sliding Window/2 - Substring Sliding Window.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +150,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "ADT's/Graphs/notes/4 - Topological Sort.md"
+                "file": "Algorithms/Sliding Window/2 - Substring Sliding Window.md"
               }
             }
           }
@@ -147,12 +172,19 @@
       "terminal:Open terminal": false
     }
   },
-  "active": "3e94858990dc021e",
+  "active": "3a2d1fb96a1eebaa",
   "lastOpenFiles": [
+    "Algorithms/Sliding Window/1 - Sliding Window Technique.md",
+    "ADT's/Graphs/notes/6 - Disjoint Sets.md",
+    "ADT's/Graphs/notes/5 - Minimum Spanning Trees.md",
+    "ADT's/Graphs/notes/1 - Graph Terminology.md",
     "ADT's/Graphs/notes/3 - Graph Traversal.md",
-    "Pasted image 20241007150552.png",
-    "Pasted image 20241007142841.png",
     "ADT's/Graphs/notes/4 - Topological Sort.md",
+    "Algorithms/Graphs/patterns/Graph Traversals.md",
+    "Resources/Graph Problems/~$mber of Provinces (Connected Components).docx",
+    "Resources/Graph Problems/~$mber of Islands.docx",
+    "Resources/images/Graphs/Pasted image 20241007142841.png",
+    "Resources/images/Graphs/Pasted image 20241007150552.png",
     "Resources/images/Graphs/Pasted image 20241007140449.png",
     "Resources",
     "Pasted image 20241007140423.png",
@@ -163,7 +195,6 @@
     "Resources/images/Graphs/Pasted image 20241007114008.png",
     "Resources/images/Graphs/Pasted image 20241007113032.png",
     "Resources/images/Graphs/Pasted image 20241007112928.png",
-    "ADT's/Graphs/notes/1 - Graph Terminology.md",
     "ADT's/Graphs/notes/2 - Graph Implementation.md",
     "Resources/Textbooks/Mark Allen Weiss - Data Structures and Algorithm Analysis in Java, 3rd Edition-Pearson Education Canada (2011).pdf",
     "Resources/Textbooks/Data Abstraction & Problem Solving with C++.pdf",
@@ -172,12 +203,9 @@
     "Resources/Graph Problems/Surrounded Regions.docx",
     "Resources/Graph Problems/Rotting Oranges.docx",
     "Resources/Graph Problems/Number of Provinces (Connected Components).docx",
-    "Resources/Graph Problems/Number of Islands.docx",
-    "Resources/Graph Problems",
     "Untitled.canvas",
     "Algorithms/Graphs/problems/Rotting Oranges.md",
     "Algorithms/Graphs/problems/Number of Islands.md",
-    "Algorithms/Graphs/patterns/Graph Traversals.md",
     "Algorithms/Graphs/problems/Island Perimeter.md",
     "Resources/Technical Problem Framework.md",
     "ADT's/Problem Template.md",
@@ -192,8 +220,6 @@
     "Algorithms/Searching/Binary Search/2 - Binary Search Template.md",
     "Algorithms/Searching/Binary Search/1 - Binary Search Introduction.md",
     "Algorithms/1 - Technical Questions/4 - DIY - Optimize and Solve Technique.md",
-    "Algorithms/1 - Technical Questions/3 - BUD - Optimize and Solve Techniques.md",
-    "Algorithms/1 - Technical Questions/2 - Walking Through Technical Questions.md",
-    "Algorithms/1 - Technical Questions/1 - Preparing for a Technical Interview.md"
+    "Algorithms/1 - Technical Questions/3 - BUD - Optimize and Solve Techniques.md"
   ]
 }

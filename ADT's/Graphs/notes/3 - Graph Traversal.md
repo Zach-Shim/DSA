@@ -523,12 +523,15 @@ public void dijkstras(Graph graph, Vertex start) {
 	}
 	distTo.replace(start, 0);
 	
+	HashSet<Vertex> known = new HashSet<>();
+	
 	// all vertices, ordered by distance
 	PriorityQueue<Vertex> pq = new PriorityQueue<>();
 	
 	while (!pq.isEmpty()) {
 		
 		Vertex u = pq.removeMin();  // let u be the closest unknown vertex
+		known.add(u);
 		
 		for(Edge edge : graph.edgesFrom(from)) {  // look at all neighbors 
 			
@@ -566,6 +569,19 @@ We break the algorithm into three steps:
 3. While the minheap is not empty
 	1. Get the updated weights of the nodes in the minheap - we visit the adjacent node with the smallest weight + edge
 
+Notice how the Priority Queue will have the same number of Vertices as the original graph. We can reconstruct the path by following back-pointers (in edgeTo map).
+
+Once a vertex is marked ***known*** (added to the hashset), its shortest path is known. 
+While a vertex is not known, another shorter path might be found. We call this update relaxing the distance because it only ever shortens the current best path.
+
+Going through closest vertices first lets us confidently say no shorter path will be found once known, because not possible to find a shorter path that uses a farther vertex we’ll consider later.
+##### Dijkstra's Invariant
+All vertices in the “known” set have the correct shortest path
+
+How can we be sure we won’t find a shorter path to X later?
+**Key Intuition:** Dijkstra’s works because: 
+- IF we always add the closest vertices to “known” first,
+- THEN by the time a vertex is added, any possible relaxing has happened and the path we know is always the shortest!
 ##### Dijkstra's Runtime
 
 ![[Pasted image 20241007150552.png]]
