@@ -1,19 +1,14 @@
 Many programming problems can be solved by systematically **searching a set of *all possibilities***.
 ## **Formal Definition**
+**Backtracking** is a general algorithm that recursively iterates over all possible configurations of a ***search space*** to find solutions to a problem.
 
-Recursive Backtracking is a general algorithm for finding solutions to a problem.
+Depending on our problem constraints, we attempt to find a ***solution space*** by exploring **possible candidate solutions** in the search space and **abandoning** (“backtracking”) once a given candidate is deemed unsuitable.
 
-Backtracking is a systematic method of iterating through all possible configurations of a search space.
-
-Depending on our problem constraints, we attempt to find a ***solution space*** by exploring **possible candidate** solutions and **abandoning** (“backtracking”) once a given candidate is deemed unsuitable.
-
-We try to view a problem as a sequence of **_choices_**.
-From this sequence of choices, there is **_solution space_** of possible answers that you want to explore which allows us to think of the solution space as a **_decision tree_**.
+We try to view a ***problem*** as a sequence of **_choices_**. Therefore, we can think of this **_search space_** of possible answers that you want to explore as a **_decision tree_**.
 
 Backtracking involves searching all possibilities, so it can be an **expensive** technique to use.
 But many problems are small enough in scope that they are nicely solved with a backtracking approach.
 ## Examples
-
 If you want to find a path through a maze from a starting point to an exit point, you can explore **all possible paths** through the maze until you find one that works.
 
 If you want to find all possible moves and countermoves in a game of tic-tac-toe, you can explore all possible moves to see if there is some move that guarantees that you a win.
@@ -24,22 +19,17 @@ Some more examples include:
 3. Find all subsets/combinations
 4. Solve minesweeper
 ## Backtracking and DFS
+Backtracking is essentially **depth-first search (DFS)** on an **implicit graph or tree** of possible configurations (also sometimes called a _state space_ or _search tree_).
 
-Backtracking is really just depth-first search on an implicit graph of configurations.
-- Backtracking can easily be used to iterate through all subsets or permutations of a set.
-- Backtracking ensures correctness by enumerating all possibilities.
-- For backtracking to be efficient, we must **prune** dead or redundant branches of the search space whenever possible.
+**Backtracking** explores all possible configurations of a problem in a systematic way.
 
-## Recursive Backtracking
+It builds up solutions **incrementally**, abandoning (backtracking from) a partial solution as soon as it determines that this partial solution **cannot possibly lead to a valid complete solution**.
 
-Many of these **exhaustive search problems** can be solved with an approach called **_backtracking_**. 
-It is a problem-solving approach that is nicely expressed using **recursion**.
-As a result, it is sometimes referred to as _recursive backtracking_.
-- **Recursive** because later versions of the problem are just slightly simpler versions of the original
-- **Backtracking** because we may have to try different alternative paths
+This process is analogous to performing a **DFS traversal** on an **implicit graph**, where:   
+**Nodes** represent **partial solutions** (configurations).
+**Edges** represent **choices** or **transitions** that extend the partial solution.
+The traversal **backtracks** when it reaches a node that cannot be extended to a valid solution.
 ## Goals of Backtracking
-
-Possible goals:
 - Find ***a*** path to success
 - Find ***all*** paths to success
 - Find ***the best*** path to success
@@ -49,20 +39,17 @@ Possible goals:
 
 Pseudo code for recursive backtracking algorithms – **looking for *a* solution**
 
-```Java
-if at a solution
-	store/report success
-	
-for(every possible choice from current state) {
-	check if selected path is safe, if yes select it
-	make recursive call to explore the problem for the state
-	if the recursive call succeeds
-		report the success to the previous level
-	else
-		back out of the current choice to restore the state at the start of the loop
-}
-
-if no solution space is found, report failure
+```Python
+function backtrack(current_state):
+	if at a solution or reached end/null state
+		store/report success
+		return
+		
+	for(each possible choice from current state) {
+		make choice (modify state)
+		backtrack(modified state)
+		undo choice (backtrack to original state)
+	}
 ```
 
 At each step in the backtracking algorithm, we start from a given partial solution, and try to
@@ -72,7 +59,6 @@ If not, the critical issue is whether the current partial solution is potentiall
 	• If so, recur and continue.
 	• If not, delete the last element from a and try another possibility for that position if one exists.
 ## Runtime
-
 When you have a recursive function that makes multiple calls, the runtime will often (but not always) look like O(branches<sup>depth</sup>).
 
 where branches is the number of times each recursive call branches.
