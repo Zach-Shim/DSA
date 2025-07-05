@@ -39,23 +39,22 @@ Therefore, a graph that has **_V_** vertices can have a maximum **_V_**<sup>2</s
 - Each node can have up to **_5_** edges
 - The graph can have up to **_25_** edges
 
-An adjacency matrix is an appropriate representation if the graph is **complete** or **dense**:
-	**|_E_| = O(V<sup>2</sup>)**
-
 ![[Pasted image 20241004155655.png]]
 ![[Pasted image 20241004155613.png]]
-##### Time Complexity
+##### Time & Space Complexity
 
 ![[Pasted image 20241004155835.png]]
 
-##### **Weighted vs. Unweighted Adjacency Matrix**
-
-###### **Unweighted Matrix**
+An adjacency matrix is an appropriate representation if the graph is **complete** or **dense**.
+The space required for an adjacency matrix is **|_E_| = O(V<sup>2</sup>)**
+##### Weighted vs. Unweighted
+**Unweighted Matrix**
 In an **unweighted graph**, we can let `matrix[i][j]` be the **number of edges** joining vertex **_i_** and **_j_**. This value is usually 1 or 0, but there can be more than one edge between two nodes.
 
 - If there is single edge between vertices _i_ and _j_, the value will be ***1***.
 - If there is no edge between vertices _i_ and _j_, the value will be ***0***.
-###### **Weighted Matrix**
+
+**Weighted Matrix**
 In a **weighted graph**, we can let `matrix[i][j]` be the **weight** that is between vertices **_i_** and **_j_**.
 If there is an edge between vertices _i_ and _j_, the value will be the **_weight_** value that labels the edge.
 
@@ -66,10 +65,8 @@ If there is an edge between vertices _i_ and _j_, the value will be the **_weigh
 > The diagonal entry `matrix[i][i]` corresponds to the number of loops (self-connecting edges) at vertex **_i_**. 
 > 
 > This is often disallowed in graph implementations, therefore, there will often be a diagonal strike from the top left to the bottom right of matrix with 0 values.
-
-##### **Directed vs. Undirected Adjacency Matrix**
-
-###### **Undirected Matrix**
+##### Directed vs. Undirected
+**Undirected Matrix**
 Remember that in an **undirected graph**, each edge can be traversed in either direction.
 An undirected graph with edge (_v_, _w_) also has edge (_w_, _v_). 
 Both of these edges will have the same value in the adjacency matrix:
@@ -81,35 +78,36 @@ An adjacency matrix for an **undirected graph is symmetrical** (across the diago
 For every index in the matrix, `matrix[i][j]`, there is a symmetrical pair at `matrix[j][i]`.
 
 - `matrix[i][j]`
-- has the same value as
+  has the same value as
 - `matrix[j][i]`
-###### **Directed Matrix**
+
+**Directed Matrix**
 In a **directed graph**, we simply list all of the edges between nodes, without the symmetry. 
 The edge value between two nodes will depend on whether the graph is weighted vs. unweighted.
-##### Example 1: Weighted Undirected Graph
+##### Example 1: Undirected Weighted Graph
 The following figure is an example of a **_weighted_** **_undirected_** graph and adjacency matrix.
 For nodes that don’t have an edge, their values are infinity.
 Notice the symmetry in the graph
 
-![[Pasted image 20230828141510.png]]
-##### Example 2: Unweighted Undirected Graph
+![[Pasted image 20241007100646.png]]
+##### Example 2: Undirected Unweighted Graph
 The following figures are examples of **_unweighted_** **_undirected_** graph and adjacency matrix.
 For vertices that don’t have an edge between them, the weight is 0.
 
-![[Pasted image 20230828141528.png]]  ![[Pasted image 20230828141533.png]]
-
-![[Pasted image 20230828141955.png]]  ![[Pasted image 20230828141921.png]]
-##### Example 3: Weighted Directed Graph
+![[Pasted image 20241007101334.png|500]]
+##### Example 3: Directed Weighted Graph
 The following figure is an example of a **_weighted_ _directed_** graph and adjacency matrix.
+For vertices that don’t have an edge between them, the weight is INF.
 
-![[Pasted image 20230828142031.png]]  ![[Pasted image 20230828142034.png]]
-##### Example 4: Unweighted Directed Graph
+![[Pasted image 20241007101438.png|500]]
+##### Example 4: Directed Unweighted Graph
 The following figure is an example of an **_unweighted_ _directed_** graph and adjacency matrix.
 - 0 represents false, and 1 represents true.
 - Notice that the diagonal entries `matrix[i][i]` are always false(0). If a node were to point to itself, the associated diagonal entry would be true(1).
 
-![[Pasted image 20230828142133.png]]
-##### **Vertex (Node) Data**
+![[Pasted image 20241007100735.png|400]]  
+![[Pasted image 20241007100843.png|400]]
+##### Vertex (Node) Data
 Our definition of an adjacency matrix so far has only been talking about edge values when it comes to storing values in the matrix.
 
 We have not mentioned  the value, if any, a **_vertex_** would have. 
@@ -117,16 +115,66 @@ For example, what if node A holds some value?
 
 If you need to associate values with vertices, you can use a separate 1-D array named **_values_** to represent the **_n_ vertex values**.
 The array is one-dimensional, and `values[i]` represents each value in vertex _i_.
+
+---
 ## **Adjacency List**
 
-An **adjacency list** for a graph with **_n_** vertices numbered 0, 1, . . ., _n_ – 1 is a one-dimensional array of size **_n_**.
-For each vertex, we keep a **_linked list_** of all adjacent vertices.
+An **adjacency list** for a graph with **_n_** vertices numbered 0, 1, . . ., _n_ – 1 is a list of size **_n_**.
+This list holds all vertices in the graph. For each vertex, we keep a **_linked list_** of all adjacent vertices.
+##### **Tradeoffs**
+There are **_V_** vertices in a graph.
+We have different options on how to store those V vertices.
+It is important to know how you will be using your adjacency list.
 
-There are **_n_** vertices in a graph.
-Keep an array of **_n_** vertices to represent the graph.
-Each vertex in the array is the head of a linked list.
-Each list contains a list of all vertices adjacent to the head of the list
-##### **Directed vs. Undirected Adjacency List**
+**Iterating over vertices? Use an array or list**
+
+1. Keep an ***array*** of **_V_** vertices to represent the graph.
+   Each vertex in the array is the head of a linked list.
+   Each list contains a list of all vertices adjacent to the head of the list
+
+2. Keep a ***list*** of of **_V_** vertices to represent the graph (can be linked list, array list, etc.).
+   However, for very sparse graphs, when using ArrayLists, the programmer may need to start the ArrayLists with a smaller capacity than the default; otherwise there could be significant wasted space.
+
+This implementation is better if ***order of insertion*** is important.
+
+**Implementation Example:**
+For each vertex V, create a Map from V to some Collection of E.
+In an adjacency list, if (u,v) ∈ E, then v is found in the collection under key u.
+
+Since each node maps to a list of its neighbors, in undirected graph every edge will be included twice
+In directed graph, every edge from u is in list associated with key u.
+   
+![[Pasted image 20241007103046.png]]
+
+![[Pasted image 20241007103056.png]]
+
+![[Pasted image 20241007104034.png]]
+   
+**Need to quickly obtain the list of adjacent vertices for any vertex? Use a hashing ds.**
+
+3. Keep a ***map*** that stores ***V*** vertices to represent the graph. 
+   The keys are vertices and the values are adjacency lists.
+   
+4. Keep a ***set*** that stores ***V*** vertices to represent the graph.
+   Create a ***Vertex*** class that maintains a vertex's adjacency list as a data member. 
+   This option can be faster, because it avoids repeated lookups in the map.
+
+What’s the tradeoff between using linked lists and hash tables for the list of neighbors?
+A hash table still might hit a worst-case, and the linked list might not on average.
+
+Graph algorithms often just need to iterate over all the neighbors, so you might get a better guarantee with the linked list.
+
+![[Pasted image 20241007104010.png]]
+
+![[Pasted image 20241007104021.png]]
+
+![[Pasted image 20241007104110.png]]
+
+**Need to quickly obtain the list of adjacent vertices for any vertex AND search for a specific neighbor? Use a hashing ds.**
+
+5. Keep a ***set*** that stores ***V*** vertices to represent the graph.
+   This set will map to another set that stores all adjacent vertices.
+##### **Directed vs. Undirected**
 **Undirected Graph**
 The adjacency list for an **undirected graph** treats each edge as if it were **_two directed edges_ _in opposite directions_**.
 
@@ -134,30 +182,24 @@ If vertex A has an undirected edge with vertex B, then vertex A will have a node
 
 **Directed Graph**
 The adjacency list for a **directed graph** simply adds a node to the end of the list for each adjacent vertex _j_ that has an edge with vertex _i_.
-
-##### **Weighted vs. Unweighted Adjacency List**
+##### **Weighted vs. Unweighted**
 **Weighted Graph**
 The adjacency list for a **weighted** graph stores the **_vertex identity_** and **_edge_** values for all adjacent vertices to node _i_.
 
 - If the edge is a dynamically allocated node, we can simply have a pointer pointing to adjacent vertex _j_.
 - If the edge is not yet dynamically allocated, we need to create a new node containing the identity of the adjacent vertex, as well as the edge’s value.
 
-The adjacency list for an **unweighted** graph does not need to store any extra information other than the **_identity_** of the adjacent vertex.
-##### **Example 1: Weighted Undirected Graph**
+**Unweighted Graph**
+The adjacency list for an **unweighted** graph does not need to store any extra information other than the **_identity_** of the adjacent vertex (does not need to store edge value).
+##### **Example 1: Undirected Weighted Graph**
 The adjacency list for an undirected graph treats each edge as if it were two directed edges in opposite directions.
 
-Thus, the edge between _A_ and _B_ in Figure 20-9a appears as edges from _A_ to _B_ and from _B_ to _A_ in Figure 20-9b.
+Thus, the edge between _A_ and _B_ appears as edges from _A_ to _B_ and from _B_ to _A_.
 
-The graph in 20-9a happens to be weighted; you can include the edge weights in the nodes of the adjacency list, as shown in Figure 20-9b.
+Since this graph is weighted, you can include the edge weights in the nodes of the adjacency list.
 
-The following figure shows a **_weighted_ _undirected_** graph and its adjacency list.
-
-![[Pasted image 20230828142904.png]]
-##### **Example 2: Unweighted Undirected Graph**
-The following figure shows an **_unweighted undirected_** graph and its adjacency list.
-
-![[Pasted image 20230828142938.png]]
-##### **Example 3: Unweighted Directed Graph**
+![[Pasted image 20241007104502.png]]
+##### **Example 2: Directed Unweighted Graph**
 You can see, that vertex 0 (_P_) has edges that point to vertex 2 (_R_) and vertex 5 (_W_).
 Thus, the first linked chain in the adjacency chain contains nodes for _R_ and _W_.
 
@@ -165,7 +207,7 @@ Each edge is unweighted, so there is no additional information that needs to sto
 
 The following figure shows an **_unweighted_ _directed_** graph and its adjacency list.
 
-![[Pasted image 20230828143025.png]]
+![[Pasted image 20241007104425.png]]
 
 If an adjacent vertex has no value, the node only needs to store some indication of the vertex’s identity.
 ## Matrix vs. List - Which Representation is Better?
@@ -208,15 +250,15 @@ Two of the most commonly performed graph operations are:
 	
 	If there were 100 vertices in a graph, but a vertex only is adjacent to 5 nodes, you only have to traverse the 5 adjacent nodes.
 ##### **Runtime Comparison**
-| Operations                | Adjacency List | Adjacency Matrix |     |
-| ------------------------- | -------------- | ---------------- | --- |
-| find all neighbors of *v* | degree(v)      | V                |     |
-| is *w* adjacent to *v*?   | degree(v)      | 1                |     |
-| add a vertex              | 1              | 1                |     |
-| add an edge               | 1              | 1                |     |
-| remove a vertex           | degree(v)      | 1                |     |
-| remove an edge            | degree(v)      | 1                |     |
+| Operations               | Adjacency List | Adjacency Matrix |
+| ------------------------ | -------------- | ---------------- |
+| get out-neighbors of *u* | O(deg(u))      | O(n)             |
+| get out-neighbors of *v* | O(n)           | O(n)             |
+| is *w* adjacent to *v*?  | O(1)           | O(1)             |
+| add an edge              | O(1)           | O(1)             |
+| remove an edge           | O(1)           | O(1)             |
 ### **Space Requirements**
+
 **Adjacency Matrix**
 An **adjacency matrix** is an appropriate representation if the graph is **dense**: |_E_| = O(|_V_|<sup>2</sup>).
 The more complete a graph is, the denser it is (more edges).
