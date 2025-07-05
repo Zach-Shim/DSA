@@ -1,14 +1,19 @@
 ## Tree Definition
 
-A tree can be defined **recursively**:
+A tree is a collection of **nodes**.
+
+A **node** is a basic unit of a data structure. A node represents the information (value or condition) contained in a single structure.
+
+We can define a tree **recursively**:
 `T` is a tree if either
 1. `T` has no nodes (is empty)
 	or
 2. `T` is of the form
-   ![[Pasted image 20230901095804.png]]
    
-   where we have a node at the top of the tree called `root`
-   where `T1`, `T2`, `...`, and `Tk` are trees
+   ![[Pasted image 20250704194555.png]]
+   
+   where we have a node at the top of the tree called the `root`
+   where `T1`, `T2`, `...`, and `Tk` are also trees
 
 From this definition, we can say a tree is a collection of
 	**_N_** **nodes**, one of which is the root
@@ -16,8 +21,6 @@ From this definition, we can say a tree is a collection of
 	**_N_** **− 1 edges**
 
 We know there are **_N_ − 1** edges because each edge connects some node to its parent, and every node except the root has one parent.
-
-A **node** is a basic unit of a data structure. A node represents the information (value or condition) contained in a single structure.
 
 An **edge** is what connects nodes together and gives them relation (parent-child).
 ## **Tree Hierarchies**

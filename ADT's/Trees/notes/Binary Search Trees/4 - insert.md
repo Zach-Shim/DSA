@@ -30,7 +30,7 @@ private BinaryNode<T> insert(T x, BinaryNode<T> n) {
 }
 ```
 
-You actual implementation depends on your assumptions and what your specific rules are for a tree.
+Your actual implementation depends on your assumptions and what your specific rules are for a tree.
 
 For example, what should we do with duplicates? There are many ways to handle them. 
 - Duplicates can be handled by keeping an extra field in the node record indicating the frequency of occurrence. This adds some extra space to the entire tree but is better than putting duplicates in the tree (which tends to make the tree very deep). 

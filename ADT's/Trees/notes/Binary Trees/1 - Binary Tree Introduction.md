@@ -7,7 +7,7 @@ An **n-ary tree** is a set **_T_** of nodes that is either empty or partitioned 
 Each node can have no more than **n children**. (But can have <= n children!)
 The following tree is an example of an n-ary tree with n = 3.
 
-![[Pasted image 20230901103121.png]]
+![n-ary tree](https://cdn-images-1.medium.com/max/720/1*tk9CXvYngOqMcife7vTnMg.png)
 
 An n-ary tree is **not a special kind of general tree**.
 - An **n-ary tree can be** **empty**

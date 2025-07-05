@@ -6,7 +6,7 @@ A **general tree** is a set **_T_** of one or more **nodes** such that **_T_** i
 ## **General Tree Implementation**
 
 A tree is a **collection** of **nodes**.
-One way to implement a tree would be to have in each **node**
+One way to implement a tree would be to have the following in each **node**:
 	- Data
 	- A link to each child of the node
 
