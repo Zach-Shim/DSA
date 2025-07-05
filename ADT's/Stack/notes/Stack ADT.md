@@ -25,15 +25,18 @@ A pop or top on an empty stack is generally considered an error in the stack ADT
 Running out of space when performing a push is an implementation limit and not an ADT error.
 ## **Implementation of Stacks**
 
-Since a stack is a list, any list implementation will do. Since ArrayList and LinkedList support stack operations they are usually the most reasonable choice.
+Since a stack is essentially a list with the constraint of pushing and popping from one side, any list implementation will do. 
+Implementing Stacks with arrays or linked lists as the underlying data structure would allow us to implement stack operations.
 
-Because stack operations are **constant-time operations** using different implementations is unlikely to yield any discernable improvement except under very unique circumstances.
+Because stack operations are **constant-time operations**, using different implementations is unlikely to yield any discernable improvement except under very unique circumstances. However there are still differences between using arrays and linked lists, with each having its own tradeoff.
+
 ## **Linked List Implementation of Stacks**
 
 The first implementation of a stack uses a singly linked list.
-1. We perform a `push()` by inserting at the front of the list.
-2. We perform a `pop()` by deleting the element at the front of the list.
+1. We perform a `push()` by inserting at the front of the list. Increment the size.
+2. We perform a `pop()` by deleting the element at the front of the list. Decrement the size.
 3. We perform a `peek()` operation by examining and returning the value at the front of the list.
+
 ## **Array Implementation of Stacks**
 
 An alternative implementation avoids links and is probably the more popular solution.
