@@ -7,7 +7,7 @@ An **n-ary tree** is a set **_T_** of nodes that is either empty or partitioned 
 Each node can have no more than **n children**. (But can have <= n children!)
 The following tree is an example of an n-ary tree with n = 3.
 
-![n-ary tree](https://cdn-images-1.medium.com/max/720/1*tk9CXvYngOqMcife7vTnMg.png)
+![[Pasted image 20250706170839.png]]
 
 An n-ary tree is **not a special kind of general tree**.
 - An **n-ary tree can be** **empty**
@@ -25,11 +25,11 @@ Each node in a binary tree can have no more than **two children**. (can have 0, 
 
 **Example**
 The following is an example of a binary tree:
-![[Pasted image 20230901103330.png]]
+![[Pasted image 20250706170906.png]]
 This tree has a total of six nodes (n) and 5 edges (n-1).
 
 Some people joke that computer scientists view the world upside down, so imagine turning the diagram around the other way:
-![[Pasted image 20230901103341.png]]
+![[Pasted image 20250706170917.png]]
 
 ## **Intuitive Definition of a Binary Tree**
 
@@ -38,7 +38,7 @@ Some people joke that computer scientists view the world upside down, so imagine
     or
 - T is of the form
 
-![[Pasted image 20230901104709.png]]
+![[Pasted image 20250706170949.png]]
 
 where **_r_** is a node and **_TL_** and **_TR_** are both binary trees
 

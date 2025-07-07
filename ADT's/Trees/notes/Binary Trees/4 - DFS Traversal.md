@@ -2,9 +2,9 @@ Unlike linked lists, one-dimensional arrays, and other linear data structures, w
 ## **Depth–First Search (DFS)**
 
 ##### DFS Definition
-Depth–first search (DFS) is an algorithm for traversing or searching tree or graph data structures.
+Depth–first search (DFS) is an algorithm for traversing or searching a graph data structure.
 
-One starts at the **root** (selecting some arbitrary node as the root for a graph) and **explore as far as possible along each branch before backtracking**.
+We start at the **root** (selecting some arbitrary node as the root for a graph) and **explore as far as possible along a branch before backtracking**.
 
 A tree is an undirected graph in which any vertex can have at most an out-degree of 2.
 In other words, any acyclic connected graph is a tree.

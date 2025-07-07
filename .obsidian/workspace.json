@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "ADT's/Trees/notes/Binary Search Trees/4 - insert.md",
+                "file": "ADT's/Trees/patterns/Binary Trees/Balanced.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "4 - insert"
+              "title": "Balanced"
             }
           }
         ]
@@ -120,7 +120,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 272.5
+    "width": 269.5
   },
   "right": {
     "id": "62aedc841707a988",
@@ -206,19 +206,38 @@
       "terminal:Open terminal": false
     }
   },
-  "active": "dd0bd213bedb25a8",
+  "active": "258292e4d73badcb",
   "lastOpenFiles": [
-    "Resources/images/Graphs/Pasted image 20241007150552.png",
-    "Resources/images/Graphs/Pasted image 20241007142841.png",
-    "Resources/images/Graphs/Pasted image 20241007140449.png",
-    "Resources/images/Graphs/Pasted image 20241007135458.png",
-    "Resources/images/Graphs/Pasted image 20241007114008.png",
-    "Resources/images/Graphs/Pasted image 20241007113032.png",
-    "Resources/images/Graphs/Pasted image 20241007112928.png",
-    "Resources/images/Graphs/Pasted image 20241007112926.png",
-    "Resources/images/Graphs/Pasted image 20241007112513.png",
-    "Resources/images/Graphs/Pasted image 20241007112209.png",
-    "Resources/images/Graphs/Pasted image 20241007112156.png",
+    "ADT's/Trees/patterns/Binary Trees/Diameter.md",
+    "ADT's/Trees/patterns/Binary Trees/Height & Depth.md",
+    "Algorithms/Graphs/patterns/Graph Traversals.md",
+    "images/Trees/Pasted image 20250706170715.png",
+    "images/Trees/Pasted image 20250706170917.png",
+    "ADT's/Trees/notes/Binary Trees/4 - DFS Traversal.md",
+    "ADT's/Trees/notes/Binary Trees/3 - Binary Tree Types.md",
+    "images/Trees/Pasted image 20250706174440.png",
+    "images/Trees/Pasted image 20250706174140.png",
+    "images/Trees/Pasted image 20250706174029.png",
+    "images/Trees/Pasted image 20250706174006.png",
+    "images/Trees/Pasted image 20250706173732.png",
+    "images/Trees/Pasted image 20250706173657.png",
+    "ADT's/Trees/notes/Binary Trees/3 - Binary Tree Height.md",
+    "images/Trees/Pasted image 20250706173316.png",
+    "ADT's/Trees/notes/Binary Trees/2 - Binary Tree Properties.md",
+    "ADT's/Trees/notes/Binary Trees/1 - Binary Tree Introduction.md",
+    "ADT's/Queue/notes/Priority Queue/2 - Heap Operations.md",
+    "ADT's/Queue/notes/Priority Queue/1 - Binary Heap Properties.md",
+    "images/Trees/Pasted image 20250706171603.png",
+    "ADT's/Trees/notes/General Trees/2 - General Tree Introduction.md",
+    "ADT's/Trees/notes/General Trees/1 - Tree Terminology.md",
+    "ADT's/Trees/patterns/Binary Trees/Balanced.md",
+    "ADT's/Trees/notes/Trie/2 - Trie Operations.md",
+    "ADT's/Trees/notes/Trie/1 - Trie Introduction.md",
+    "ADT's/Trees/notes/Binary Search Trees/4 - insert.md",
+    "ADT's/Trees/notes/Binary Search Trees/5 - remove.md",
+    "ADT's/Trees/notes/Binary Search Trees/3 - findMin and findMax.md",
+    "ADT's/Trees/notes/Binary Search Trees/1 - Binary Search Tree Introduction.md",
+    "ADT's/Trees/notes/Binary Search Trees/2 - contains and find.md",
     "Resources/images/Graphs",
     "Resources/images",
     "Resources/Textbooks/Mark Allen Weiss - Data Structures and Algorithm Analysis in Java, 3rd Edition-Pearson Education Canada (2011).pdf",
@@ -235,25 +254,6 @@
     "Archive/ADTs/Arrays/patterns/Array Constraints.md",
     "Archive/ADTs/Arrays/notes/03 - Arrays and Loops.md",
     "Archive/ADTs/Arrays/notes/02 - Java vs. C++ Arrays.md",
-    "Archive/ADTs/Arrays/notes/01 - Array Declaration & Initialization.md",
-    "Algorithms/Two Pointer/notes/1 - Two Pointer Technique.md",
-    "Algorithms/Sliding Window/notes/2 - Substring Sliding Window.md",
-    "Algorithms/Sliding Window/notes/1 - Sliding Window Technique.md",
-    "Algorithms/Recursion/1 - Recursion/1 - Recursion Introduction.md",
-    "ADT's/Graphs/notes/6 - Disjoint Sets.md",
-    "ADT's/Graphs/notes/5 - Minimum Spanning Trees.md",
-    "ADT's/Graphs/notes/4 - Topological Sort.md",
-    "ADT's/Trees/notes/Binary Search Trees/4 - insert.md",
-    "ADT's/Trees/notes/Binary Search Trees/5 - remove.md",
-    "ADT's/Trees/notes/Binary Search Trees/3 - findMin and findMax.md",
-    "ADT's/Trees/notes/Binary Search Trees/1 - Binary Search Tree Introduction.md",
-    "ADT's/Lists/notes/List ADT/03 - List Operations.md",
-    "ADT's/Lists/notes/List ADT/02 - List ADT.md",
-    "ADT's/Lists/notes/List ADT/01 - List Model.md",
-    "ADT's/Lists/notes/ArrayList/02 - ArrayList Operations.md",
-    "ADT's/Lists/notes/ArrayList/01 - ArrayList Model.md",
-    "ADT's/Trees/notes/Binary Trees/2 - Binary Tree Properties.md",
-    "ADT's/Trees/notes/Binary Trees/1 - Binary Tree Introduction.md",
     "Untitled.canvas"
   ]
 }

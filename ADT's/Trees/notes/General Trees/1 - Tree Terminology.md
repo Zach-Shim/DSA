@@ -13,7 +13,7 @@ We can define a tree **recursively**:
    ![[Pasted image 20250704194555.png]]
    
    where we have a node at the top of the tree called the `root`
-   where `T1`, `T2`, `...`, and `Tk` are also trees
+   where `T1`, `T2`, `...`, and `Tk` are also trees (subtrees)
 
 From this definition, we can say a tree is a collection of
 	**_N_** **nodes**, one of which is the root
@@ -53,7 +53,7 @@ The **root** is the **ancestor of every node** in the tree.
 
 A **parent-child** relationship between nodes can be generalized to an **ancestor-descendant** relationship.
 
-![[Pasted image 20230901101010.png]]
+![[Pasted image 20250706171159.png]]
 
 In Figure 15-1, the following nodes in tree (a) have an ancestor-descendant relationship:
 1. A is an ancestor of D
@@ -72,20 +72,20 @@ Figure 15-1b shows a subtree of the tree in Figure 15-1a.
 This subtree has _B_ as its root and is a subtree of the node _A_.
 
 **Example 2:**
-![[Pasted image 20230901101618.png]]
+![[Pasted image 20250706171257.png]]
 
-**root:**                           _A_
+**root:**                        _A_
 
-**Siblings**:                     _B, C, D, E, F, G_ are siblings
+**Siblings**:                 _B, C, D, E, F, G_ are siblings
                                  _H_ has no siblings
                                  _I, J_ are siblings
                                  _K_ _L_, _M_ are siblings
                                  _N_ has no siblings
                                  _P, Q_ are siblings
 
-**Leaves**:                      _B_, _C_, _H_, _I_, _P_, _Q_, _K_, _L_, _M_, and _N_.
+**Leaves**:                   _B_, _C_, _H_, _I_, _P_, _Q_, _K_, _L_, _M_, and _N_.
 
-**Parent of Node _F_**:     _A_
+**Parent of Node _F_**: _A_
 
 **Children of Node _F_**: _K_, _L_, and _M_
 
@@ -127,7 +127,7 @@ The height of a tree is equal to the height of the root.
 All leaves are at height 0.
 
 **Example:**
-![[Pasted image 20230901102258.png]]
+![[Pasted image 20250706171347.png]]
 
 **Node _F_**
 Depth 1
