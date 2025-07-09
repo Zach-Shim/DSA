@@ -36,7 +36,7 @@ The set **_V_** inside of a graph, **_G = (V, E)_**, is defined by a **set of u
 ##### **Edge**
 The set **_E_** inside of a graph, **_G = (V, E)_**, is defined by a set of **pairs of vertices**.
 
-A pair of vertices can be represented like **(_v_, _w_)**, where **(_v_, _w_) ∈ _V_**.
+A pair of vertices sharing an edge can be represented like **(_v_, _w_)**, where **(_v_, _w_) ∈ _V_**.
 - The symbol ∈ indicates set membership and means “is an element of”.
 - The statement (_v_, _w_) ∈ _V_ means both vertices in the pair _v_, _w_ are in the set _V_.
 
@@ -97,12 +97,12 @@ A **_simple path_ repeats no vertices** (except the 1st vertex can be the same a
 
 ![[Pasted image 20240917163745.png]]
 
-P (Seattle->Seattle) = {Seattle, Salt Lake City, San Francisco, Dallas, Chicago, Seattle}
+P (Seattle -> Seattle) = {Seattle, Salt Lake City, San Francisco, Dallas, Chicago, Seattle}
 P (Seattle -> Chicago) = {Seattle, Salt Lake City, San Francisco, Dallas, Chicago}
 ##### **Cycle**
 A **_cycle_** is a path that **starts and ends at the same vertex**.
 
-P (Seattle->Seattle) = {Seattle, Salt Lake City, San Francisco, Dallas, Chicago, Seattle}
+P (Seattle -> Seattle) = {Seattle, Salt Lake City, San Francisco, Dallas, Chicago, Seattle}
 
 A **_simple cycle_** is a cycle that does not repeat edges or vertices, except the **first is also the last**.
 ##### **Acyclic Graph**

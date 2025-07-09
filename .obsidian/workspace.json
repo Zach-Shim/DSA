@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "ADT's/Trees/patterns/Binary Trees/Balanced.md",
+                "file": "Algorithms/Graphs/problems/Number of Islands.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Balanced"
+              "title": "Number of Islands"
             }
           }
         ]
@@ -208,9 +208,19 @@
   },
   "active": "258292e4d73badcb",
   "lastOpenFiles": [
-    "ADT's/Trees/patterns/Binary Trees/Diameter.md",
-    "ADT's/Trees/patterns/Binary Trees/Height & Depth.md",
+    "Algorithms/Graphs/problems/Island Perimeter.md",
+    "Algorithms/Graphs/problems/Number of Islands.md",
+    "Algorithms/Graphs/problems/Rotting Oranges.md",
+    "ADT's/Graphs/notes/3 - Graph Traversal.md",
+    "ADT's/Graphs/notes/2 - Graph Implementation.md",
+    "ADT's/Graphs/notes/4 - Topological Sort.md",
+    "ADT's/Graphs/notes/5 - Minimum Spanning Trees.md",
+    "ADT's/Graphs/notes/6 - Disjoint Sets.md",
+    "ADT's/Graphs/notes/1 - Graph Terminology.md",
     "Algorithms/Graphs/patterns/Graph Traversals.md",
+    "ADT's/Trees/patterns/Binary Trees/Height & Depth.md",
+    "ADT's/Trees/patterns/Binary Trees/Diameter.md",
+    "ADT's/Trees/patterns/Binary Trees/Balanced.md",
     "images/Trees/Pasted image 20250706170715.png",
     "images/Trees/Pasted image 20250706170917.png",
     "ADT's/Trees/notes/Binary Trees/4 - DFS Traversal.md",
@@ -230,14 +240,10 @@
     "images/Trees/Pasted image 20250706171603.png",
     "ADT's/Trees/notes/General Trees/2 - General Tree Introduction.md",
     "ADT's/Trees/notes/General Trees/1 - Tree Terminology.md",
-    "ADT's/Trees/patterns/Binary Trees/Balanced.md",
     "ADT's/Trees/notes/Trie/2 - Trie Operations.md",
     "ADT's/Trees/notes/Trie/1 - Trie Introduction.md",
     "ADT's/Trees/notes/Binary Search Trees/4 - insert.md",
     "ADT's/Trees/notes/Binary Search Trees/5 - remove.md",
-    "ADT's/Trees/notes/Binary Search Trees/3 - findMin and findMax.md",
-    "ADT's/Trees/notes/Binary Search Trees/1 - Binary Search Tree Introduction.md",
-    "ADT's/Trees/notes/Binary Search Trees/2 - contains and find.md",
     "Resources/images/Graphs",
     "Resources/images",
     "Resources/Textbooks/Mark Allen Weiss - Data Structures and Algorithm Analysis in Java, 3rd Edition-Pearson Education Canada (2011).pdf",
@@ -248,12 +254,6 @@
     "Resources/Graph Problems/Number of Provinces (Connected Components).docx",
     "Resources/Graph Problems/Number of Islands.docx",
     "Resources/Textbooks",
-    "Resources/Technical Problem Framework.md",
-    "Archive/ADTs/Arrays/patterns/Time Complexity.md",
-    "Archive/ADTs/Arrays/patterns/Techinques.md",
-    "Archive/ADTs/Arrays/patterns/Array Constraints.md",
-    "Archive/ADTs/Arrays/notes/03 - Arrays and Loops.md",
-    "Archive/ADTs/Arrays/notes/02 - Java vs. C++ Arrays.md",
     "Untitled.canvas"
   ]
 }

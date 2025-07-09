@@ -2,7 +2,7 @@ A **graph traversal** is an algorithm that visits all vertices that it can reach
 
 In other words, a graph traversal that starts at vertex **_v_** will visit all vertices **_u_** for which there is a path between **_v_** and **_u_**.
 
-The **_order_** vertices are traversed in depends on the **_type_** of graph you are traversing.
+The **_order_** vertices are traversed in depends on the **_type_** of graph and what ***traversing algorithm*** you use to traverse the graph.
 ## Types of Graphs
 
 1. **Connected Graph**
@@ -28,20 +28,20 @@ A graph traversal may or may not visit all nodes in a graph, depending on the ty
 
 ##### **Searching for Paths**
 A common operation on graphs is searching for a path from one vertex to another.
-1. Sometimes, we just want **any** path (or want to know if a path exists).
-2. Sometimes, we want to minimize path length (# of edges).
-3. Sometimes, we want to minimize path cost (sum of edge weights).
+1. Does any path exist between nodes S and T?
+2. What's the minimum path length (# of edges) between nodes S and T?
+3. What's the minimum path cost (sum of edge weights) between nodes S and T?
 
 >[!Important]
 >There are 3 main traversal algorithms we want to implement:
->1. s-t connectivity problem	
+>1. S-T connectivity problem	
 >	1. Does a path exist?
 >	   
->2. s-t ***unweighted*** shortest path problem
+>2. S-T ***unweighted*** shortest path problem
 >	1. Unweighted
 >	2. Shortest path
 >	   
->3. s-t ***weighted*** shortest path problem
+>3. S-T ***weighted*** shortest path problem
 >	1. Weighted
 >	2. Shortest path
 
@@ -219,7 +219,11 @@ This _last visited, first explored_ strategy is reflected both in the explicit s
 ![[Pasted image 20241007112156.png]]
 ![[Pasted image 20241007112209.png]]
 ##### **Runtime**
-Because this strategy guarantees that each edge is encountered only once, the total time to perform the traversal is _O_(|_E_| + |_V_|), as long as adjacency lists are used.
+Adjacency Matrix: 
+O(|E| * |V|)
+
+Adjacency List:
+Because this strategy guarantees that each edge is encountered only once, the total time to perform the traversal is _O_(|_E_| + |_V_|).
 
 ___
 ## **Breadth-First Search**
@@ -299,7 +303,7 @@ DFS and BFS are extremely similar, the only difference is the data structure we 
 
 DFS and BFS are just two approaches for ordering a graph traversal. They are really just techniques for iterating over a set of nodes.
 
-We can change the BFS Queue to a Stack to make it become DFS! (and vise versa)
+We can change the BFS Queue to a Stack to make it become iterative DFS! (and vise versa)
 
 ![[Pasted image 20241007112928.png]]
 
@@ -309,6 +313,11 @@ We can change the BFS Queue to a Stack to make it become DFS! (and vise versa)
 DFS uses less memory than BFS
 DFS is easier to reconstruct the path when found
 DFS does not always find the shortest path (for unweighted graphs). BFS does.
+
+**Adjacency Matrix**
+An adjacency matrix holds O(V<sup>2</sup>) indices. We must visit every index, even if it does not hold a vertex. Therefore, DFS/BFS for an adjacency matrix requires O(V<sup>2</sup>) time.
+
+It also requires O(V<sup>2</sup>) space.
 
 **Adjacency List**
 What is the expected runtime of DFS and BFS, in terms of the number of vertices V and the number of edges E?
@@ -327,13 +336,11 @@ This implies that the algorithm requires O(V + E) time for an adjacency list, wh
 - E is the number of edges
 
 This is O(E) if the graph is connected, since there must be at least O(V) edges in that case.
+## **Level-Order Traversal (Multi-Source BFS)**
 
-An adjacency matrix holds O(V<sup>2</sup>) indices. We must visit every index, even if it does not hold a vertex. Therefore, DFS/BFS for an adjacency matrix requires O(V<sup>2</sup>) time.
-## Level-Order Traversal
+Level-order traversal (multi-source BFS) is an extension of BFS.
 
-Level-order traversal is an extension of BFS.
-
-Sometimes you have an algorithm that does not simply have a single start point like the s-t connectivity problem.
+Sometimes you have an algorithm that does not simply have a single start point like the S-T connectivity problem, but rather multiple start points.
 
 If there are multiple vertices you must traverse at each BFS interval, traverse over every node that is currently in the queue. 
 
@@ -352,7 +359,7 @@ public void bfs(Graph graph, Vertex s) {
 // Traverses a graph beginning at vertex v using recursive BFS
 private bool bfs(Graph graph, Vertex s) {
 	// add all starting vertices
-	Queue<Vertex> perimeter = new Queue<>(); 
+	Queue<Vertex> queue = new Queue<>(); 
 	for(Vertex vertex : graph.vertices()) {
 		if(vertex meets started condition i.e. in-degree of 0) {
 			perimeter.add(vertex);
@@ -360,12 +367,13 @@ private bool bfs(Graph graph, Vertex s) {
 	}
 	
 	Set<Vertex> visited = new Set<>();
-	while(!perimeter.isEmpty()) {
-		    Vertex from = perimeter.remove();  
+	while(!queue.isEmpty()) {
+		for(int i = 0; i < queue.length(); i++)
+		    Vertex from = queue.remove();  
 			for(Edge edge : graph.edgesFrom(from)) {
 				Vertex to = edge.to();
 				if(!visited.contains(to)) {
-				    perimeter.add(to);
+				    queue.add(to);
 					visited.add(s);
 				}
 			}
@@ -375,7 +383,7 @@ private bool bfs(Graph graph, Vertex s) {
 }
 ```
 
-## Unweighted Shortest Path Problem
+## **Unweighted Shortest Path Problem**
 
 **Problem Statement:**
 Given source vertex s and a target vertex t, how long is the shortest path from s to t? What edges make up that path?
@@ -385,16 +393,13 @@ This is a little harder, but still totally doable! We can use a traversal algori
 Sounds like a job for BFS! We just need to add a couple mode tracker data structures.
 
 **Data Structures:**
-1. **`Visited`** 
-   Tracks if a node has been visited.
-   
-2. **`edgeTo`**
-   Map stores ***backpointers***: each vertex remembers what vertex was used to arrive at it! 
+1. **`edgeTo`**
+   Map that stores ***backpointers***: each vertex remembers what vertex was used to arrive at it! 
    Allows us to print the path from t to s.
    
    Another implementation option: store them as fields of the nodes themselves
 
-3. **`distTo`**
+2. **`distTo`**
    Map that tracks the distance from a starting node to the current node. 
 
 **Implementation:**
@@ -494,22 +499,25 @@ BFS processed nodes in a level-by-level order. Each level got processed before t
 In BFS, each time we process a node, it will be the ***next edge in the layer***.
 In Dijkstra's, each time we process a node, it will be the ***edge with the next smallest weight***.
 
-Therefore, the weight of the shortest path from **s** to **v** where **(s, v) ∈ E** is not necessarily the weight of their shared edge **(s, v)**. This single shared edge may have a larger weight than taking an alternative path with more edges that have smaller total weights.
+Let's say, for example, that **s** and **t** share an edge **(s, t) ∈ E**.
+In BFS, the shortest path would be equal to 1. In Dijkstra's, this single shared edge may have a larger weight than taking an alternative path with more edges that have smaller total weights.
 ##### Dijkstra’s Algorithm: Idea
 
 ![[Pasted image 20241007142841.png]]
 
-The objective of the SSSP problem is to find the shortest path weight from **s** to each vertex **u**, where **s** ∈ **V** and **u** ∈ **V**, denoted as **δ(s, u)** (δ is pronounced as 'delta') and also the actual shortest path from **s** to **u**.
+The objective of the SSSP problem is to find the shortest path weight from **s** to each vertex **u**, where **s** ∈ **V** and **u** ∈ **V**, denoted as **δ(s, u)** (δ is pronounced as 'delta') and also the actual shortest path from **s** to **t**.
 
-The path weight of a path **p** is simply the summation of edge weights along that path.
-
-The weight of the shortest path from **s** to **s** is trivial: 0.
-The weight of the shortest path from **s** to any unreachable vertex is also trivial: +∞.
+The ***path weight*** of a path **p** can be calculated in the following ways:
+	The summation of edge weights along that path.
+	The weight of the shortest path from **s** to **s** is trivial: 0.
+	The weight of the shortest path from **s** to any unreachable vertex is also trivial: +∞.
 
 At each step: 
 1. Pick closest unknown vertex v
 2. Add it to the “cloud” of known vertices
 3. Update “best-so-far” distances for vertices with edges from v
+
+Note that unlike DFS and BFS, we may **revisit** nodes if we find a smaller path weight to the node along the way (remember that there may be multiple paths to a node).
 ## Dijkstra's Algorithm Pseudocode
 
 ```Java
@@ -555,12 +563,13 @@ public void dijkstras(Graph graph, Vertex start) {
 	reconstruct path from v2 back to v1, following previous pointers.
 ```
 
-A minheap data structure is required to make Dijkstra's work.
+A minheap data structure is required to make Dijkstra's work (minheap = "cloud").
 - DFS requires a Stack
 - BFS requires a Queue
 - Dijkstra's requires a minheap
 
-A minheap gives them each vertex a distance “priority” value.
+This minheap orders vertices by smallest weighted distance it takes to get to the node from **s**. 
+The smaller the distance to a vertex is, the higher “priority” a vertex has.
 This makes it fast to grab the one with the smallest distance and lets us update that distance as we discover new, better paths.
 
 We break the algorithm into three steps:

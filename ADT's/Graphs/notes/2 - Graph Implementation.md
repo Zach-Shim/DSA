@@ -8,8 +8,8 @@ There are two common data structures we can use to represent it:
 
 Notice the **adjacency** term. What does it mean for two vertices to be adjacent?
 
-Two vertices are said to be **_adjacent_** if there is simply share an **_edge_**.
-That is, vertex **_j_** is **_adjacent_** to **_i_** if and only if (_i_, _j_) ∈ _E_.
+Two vertices are said to be **_adjacent_** if they simply share an **_edge_**.
+That is, vertex **_j_** is **_adjacent_** to vertex **_i_** if and only if (_i_, _j_) ∈ _E_.
 
 In a digraph (directed graph), edges are a **_one-way_** connection between vertices _v_ -> _w_.
 An edge is an ordered pair, thus, _j_ is adjacent to _i_, but _i_ is not adjacent to _j_.
@@ -87,12 +87,13 @@ The edge value between two nodes will depend on whether the graph is weighted vs
 ##### Example 1: Undirected Weighted Graph
 The following figure is an example of a **_weighted_** **_undirected_** graph and adjacency matrix.
 For nodes that don’t have an edge, their values are infinity.
-Notice the symmetry in the graph
+Notice the symmetry in the graph:
 
 ![[Pasted image 20241007100646.png]]
 ##### Example 2: Undirected Unweighted Graph
 The following figures are examples of **_unweighted_** **_undirected_** graph and adjacency matrix.
 For vertices that don’t have an edge between them, the weight is 0.
+Again, notice the symmetry:
 
 ![[Pasted image 20241007101334.png|500]]
 ##### Example 3: Directed Weighted Graph
@@ -108,10 +109,10 @@ The following figure is an example of an **_unweighted_ _directed_** graph and a
 ![[Pasted image 20241007100735.png|400]]  
 ![[Pasted image 20241007100843.png|400]]
 ##### Vertex (Node) Data
-Our definition of an adjacency matrix so far has only been talking about edge values when it comes to storing values in the matrix.
+Our definition of an adjacency matrix so far has only been talking about edge values when it comes to storing unweighted vs. weighted values in a directed vs. undirected matrix.
 
-We have not mentioned  the value, if any, a **_vertex_** would have. 
-For example, what if node A holds some value?
+We have not mentioned the value, if any, a **_vertex_** would have. 
+For example, what if node A holds some value? We can't store in the adjacency matrix, because it holds the edge values.
 
 If you need to associate values with vertices, you can use a separate 1-D array named **_values_** to represent the **_n_ vertex values**.
 The array is one-dimensional, and `values[i]` represents each value in vertex _i_.
@@ -121,6 +122,8 @@ The array is one-dimensional, and `values[i]` represents each value in vertex _i
 
 An **adjacency list** for a graph with **_n_** vertices numbered 0, 1, . . ., _n_ – 1 is a list of size **_n_**.
 This list holds all vertices in the graph. For each vertex, we keep a **_linked list_** of all adjacent vertices.
+
+This way, we don't need to keep a separate array to hold Vertex values. They can be stored in an object within the adjacency list.
 ##### **Tradeoffs**
 There are **_V_** vertices in a graph.
 We have different options on how to store those V vertices.
