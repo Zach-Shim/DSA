@@ -6,7 +6,7 @@ In an array, we're usually concerned about two things
 2. the value of an element 
 
 ---
-## **Constraints**
+## Constraints
 
 With array questions, there are often common constraints we need to find to clarify a question.
 
@@ -20,6 +20,7 @@ With array questions, there are often common constraints we need to find to clar
 	- Are we allowed to have duplicate values? 
 
 - What is the structure of the array?
+	- Is this a one-dimensional array or a two-dimensional matrix?
 	- Do we need to extract a subarray or subsequence?
 
 - What operation/algorithm do we need to perform on the array?

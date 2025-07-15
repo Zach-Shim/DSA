@@ -5,8 +5,12 @@ How arrays are implemented is one such difference.
 
 ---
 ##### **Initialization**
-A Java array is quite different then a C++ stack-allocated (fixed) array.
-Java arrays are, however, essentially the same as a C++ dynamic array (pointer to an array allocated on the **_heap_**_)_.
+There are two kinds of arrays in C++
+1. Static stack-allocated (fixed) array
+2. Dynamic heap-allocated array
+
+Java arrays are essentially the same as a C++ dynamic arrays.
+C++ dynamic arrays are pointers to an array allocated on the **_heap_**.
 
 ```Java
 int[] a = new int[100];             // Java initialization
@@ -52,13 +56,23 @@ Furthermore, there is no pointer arithmetic—you can’t increment a to point t
 Since an array in Java is an object, it may have instance fields.
 Every Java array has a field defined as **`public int length`** that stores the **size** of an array.
 
-![[Pasted image 20230823135232.png]]
+```Java
+int[] scores = new int[10];
+for (int i = 0; i < scores.length; i++)
+	. . . scores[i] . . .;
+```
 
 The size (or length) of an array is simply the number of elements that it was defined to be able to hold.
 
 **C++ Array Size**
 C++ programmers must maintain a separate, distinct variable to track the size of an array.
 
+```cpp
+const int size = 10;
+int scores[size];
+for (int i = 0; i < size; i++)
+	. . . scores[i] . . .;
+```
 ---
 ##### **Bounds Checking**
 
