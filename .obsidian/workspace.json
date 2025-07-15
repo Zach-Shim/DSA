@@ -1,24 +1,24 @@
 {
   "main": {
-    "id": "350e3076c072fba1",
+    "id": "d534d535be20e1ef",
     "type": "split",
     "children": [
       {
-        "id": "6e69f42ef237e082",
+        "id": "5def55c3ebe815b5",
         "type": "tabs",
         "children": [
           {
-            "id": "258292e4d73badcb",
+            "id": "28537b6db74713a7",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Algorithms/Graphs/problems/Number of Islands.md",
+                "file": "ADT's/Queue/notes/Queue/1 - Queue ADT.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Number of Islands"
+              "title": "1 - Queue ADT"
             }
           }
         ]
@@ -27,15 +27,15 @@
     "direction": "vertical"
   },
   "left": {
-    "id": "9cb0dafc40642e4f",
+    "id": "051c395c60f97bc5",
     "type": "split",
     "children": [
       {
-        "id": "b1f589ceaa22f08a",
+        "id": "3f7dde2ce3aa051e",
         "type": "tabs",
         "children": [
           {
-            "id": "dd0bd213bedb25a8",
+            "id": "3e94858990dc021e",
             "type": "leaf",
             "state": {
               "type": "file-explorer",
@@ -48,7 +48,7 @@
             }
           },
           {
-            "id": "9363f4e6e9e008cc",
+            "id": "7c682fa8c1544533",
             "type": "leaf",
             "state": {
               "type": "search",
@@ -65,7 +65,7 @@
             }
           },
           {
-            "id": "12c12332c0d49319",
+            "id": "4682600d44c8fe70",
             "type": "leaf",
             "state": {
               "type": "bookmarks",
@@ -73,70 +73,28 @@
               "icon": "lucide-bookmark",
               "title": "Bookmarks"
             }
-          },
-          {
-            "id": "509d64d3dd9bf248",
-            "type": "leaf",
-            "pinned": true,
-            "state": {
-              "type": "terminal:terminal",
-              "state": {
-                "terminal:terminal": {
-                  "cwd": "/Users/zshim/Documents/Learn/DSA",
-                  "focus": false,
-                  "profile": {
-                    "args": [],
-                    "executable": "/bin/zsh",
-                    "name": "",
-                    "platforms": {
-                      "darwin": true
-                    },
-                    "pythonExecutable": "python3",
-                    "restoreHistory": true,
-                    "successExitCodes": [
-                      "0",
-                      "SIGINT",
-                      "SIGTERM"
-                    ],
-                    "terminalOptions": {
-                      "documentOverride": null
-                    },
-                    "type": "integrated",
-                    "useWin32Conhost": true
-                  },
-                  "serial": {
-                    "columns": 25,
-                    "data": "zshim@Zachs-Mac-mini DSA % \r\n * Restored history at Thu Jul 03 2025 21:16:05 GMT-0700 (Mountain Standard Time)\r\n\r\nzshim@Zachs-Mac-mini DSA % ls\r\n\r\nADT's\r\nAlgorithms\r\nGraph Problems\r\nTechnical Problem Framework.md\r\nTextbooks\r\nimages\r\nzshim@Zachs-Mac-mini DSA % gi\r\nt status\r\nRefresh index:            \r\n  100% (150/150), done.\r\nOn branch main\r\nYour branch is up to date with 'origin/main'.\r\n\r\nChanges not staged for commit:\r\n  (use \"git add/rm <file>...\" to update what will be committed)\r\n  (use \"git restore <file>...\" to discard changes in working directory)\r\n\u001b[8C\u001b[31mmodified:   .obsidian/core-plugins.json\r\n\u001b[8Cmodified:   .obsidian/plugins/terminal/main.js\r\n\u001b[8Cmodified:   .obsidian/plugins/terminal/manifest.json\r\n\u001b[8Cmodified:   .obsidian/workspace.json\r\n\u001b[8Cmodified:   ADT's/Stack/notes/Stack ADT.md\r\n\u001b[8Cdeleted:    ADT's/Stack/src/ArrayStack.java\r\n\u001b[8Cdeleted:    ADT's/Stack/src/LinkedListStack.java\r\n\u001b[8Cdeleted:    ADT's/Stack/src/StackADT.java\r\n\u001b[8Cmodified:   ADT's/Trees/notes/Binary Search Trees/4 - insert.md\r\n\u001b[8Cmodified:   ADT's/Trees/notes/Binary Trees/1 - Binary Tree Introduction.md\r\n\u001b[8Cmodified:   ADT's/Trees/notes/General Trees/1 - Tree Terminology.md\r\n\u001b[8Cmodified:   ADT's/Trees/notes/General Trees/2 - General Tree Introduction.md\r\n\u001b[8Cmodified:   Algorithms/Recursion/2 - Backtracking/1 - Backtracking Introduction.md\r\n\u001b[8Cdeleted:    images/Pasted image 20241004133643.png\r\n\u001b[8Cdeleted:    images/Pasted image 20241004134845.png\r\n\u001b[8Cdeleted:    images/Pasted image 20241004134847.png\r\n\u001b[8Cdeleted:    images/Pasted image 20241004135150.png\r\n\u001b[8Cdeleted:    images/Pasted image 20241004135521.png\r\n\u001b[8Cdeleted:    images/Pasted image 20241004155613.png\r\n\u001b[8Cdeleted:    images/Pasted image 20241004155655.png\r\n\u001b[8Cdeleted:    images/Pasted image 20241004155835.png\r\n\u001b[8Cdeleted:    ~$lls and Gates.docx\r\n\u001b[8Cdeleted:    ~$mber of Islands.docx\r\n\u001b[8Cdeleted:    ~$mber of Provinces (Connected Components).docx\r\n\u001b[8Cdeleted:    ~$rrounded Regions.docx\r\n\u001b[8Cdeleted:    ~$tting Oranges.docx\r\n\r\n\u001b[0mUntracked files:\r\n  (use \"git add <file>...\" to include in what will be committed)\r\n\u001b[8C\u001b[31mADT's/Stack/problems/\r\n\u001b[8CADT's/Stack/src/Java/\r\n\u001b[8CADT's/Stack/src/Typescript/\r\n\u001b[8Cimages/Graphs/Pasted image 20241004133643.png\r\n\u001b[8Cimages/Graphs/Pasted image 20241004134845.png\r\n\u001b[8Cimages/Graphs/Pasted image 20241004134847.png\r\n\u001b[8Cimages/Graphs/Pasted image 20241004135150.png\r\n\u001b[8Cimages/Graphs/Pasted image 20241004135521.png\r\n\u001b[8Cimages/Graphs/Pasted image 20241004155613.png\r\n\u001b[8Cimages/Graphs/Pasted image 20241004155655.png\r\n\u001b[8Cimages/Graphs/Pasted image 20241004155835.png\r\n\u001b[8Cimages/Trees/\r\n\r\n\u001b[0mno changes added to commit (use \"git add\" and/or \"git commit -a\")\r\nzshim@Zachs-Mac-mini DSA % git add images/Trees\r\nzshim@Zachs-Mac-mini DSA % ls\r\nADT's---------------------\u001b[1D\u001b[1X\u001b[A\u001b[5C\u001b[20X\u001b[5D\u001b[B\u001b[7CTechnical Problem Framework.md\r\nAlgorithms----------------\u001b[1D\u001b[1X\u001b[A\u001b[10C\u001b[15X\u001b[10D\u001b[B\u001b[7CTextbooks\r\nGraph Problems------------\u001b[1D\u001b[1X\u001b[A\u001b[14C\u001b[11X\u001b[14D\u001b[B\u001b[7Cimages\r\nzshim@Zachs-Mac-mini DSA % git add ADT\\'s/Trees \r\nzshim@Zachs-Mac-mini DSA % git status\r\nOn branch main\r\nYour branch is up to date with 'origin/main'.\r\n\r\nChanges to be committed:\r\n  (use \"git restore --staged <file>...\" to unstage)\r\n\u001b[8C\u001b[32mmodified:   ADT's/Trees/notes/Binary Search Trees/4 - insert.md\r\n\u001b[8Cmodified:   ADT's/Trees/notes/Binary Trees/1 - Binary Tree Introduction.md\r\n\u001b[8Cmodified:   ADT's/Trees/notes/General Trees/1 - Tree Terminology.md\r\n\u001b[8Cmodified:   ADT's/Trees/notes/General Trees/2 - General Tree Introduction.md\r\n\u001b[8Cnew file:   images/Trees/Pasted image 20250704194555.png\r\n\r\n\u001b[0mChanges not staged for commit:\r\n  (use \"git add/rm <file>...\" to update what will be committed)\r\n  (use \"git restore <file>...\" to discard changes in working directory)\r\n\u001b[8C\u001b[31mmodified:   .obsidian/core-plugins.json\r\n\u001b[8Cmodified:   .obsidian/plugins/terminal/main.js\r\n\u001b[8Cmodified:   .obsidian/plugins/terminal/manifest.json\r\n\u001b[8Cmodified:   .obsidian/workspace.json\r\n\u001b[8Cmodified:   ADT's/Stack/notes/Stack ADT.md\r\n\u001b[8Cdeleted:    ADT's/Stack/src/ArrayStack.java\r\n\u001b[8Cdeleted:    ADT's/Stack/src/LinkedListStack.java\r\n\u001b[8Cdeleted:    ADT's/Stack/src/StackADT.java\r\n\u001b[8Cmodified:   Algorithms/Recursion/2 - Backtracking/1 - Backtracking Introduction.md\r\n\u001b[8Cdeleted:    images/Pasted image 20241004133643.png\r\n\u001b[8Cdeleted:    images/Pasted image 20241004134845.png\r\n\u001b[8Cdeleted:    images/Pasted image 20241004134847.png\r\n\u001b[8Cdeleted:    images/Pasted image 20241004135150.png\r\n\u001b[8Cdeleted:    images/Pasted image 20241004135521.png\r\n\u001b[8Cdeleted:    images/Pasted image 20241004155613.png\r\n\u001b[8Cdeleted:    images/Pasted image 20241004155655.png\r\n\u001b[8Cdeleted:    images/Pasted image 20241004155835.png\r\n\u001b[8Cdeleted:    ~$lls and Gates.docx\r\n\u001b[8Cdeleted:    ~$mber of Islands.docx\r\n\u001b[8Cdeleted:    ~$mber of Provinces (Connected Components).docx\r\n\u001b[8Cdeleted:    ~$rrounded Regions.docx\r\n\u001b[8Cdeleted:    ~$tting Oranges.docx\r\n\r\n\u001b[0mUntracked files:\r\n  (use \"git add <file>...\" to include in what will be committed)\r\n\u001b[8C\u001b[31mADT's/Stack/problems/\r\n\u001b[8CADT's/Stack/src/Java/\r\n\u001b[8CADT's/Stack/src/Typescript/\r\n\u001b[8Cimages/Graphs/Pasted image 20241004133643.png\r\n\u001b[8Cimages/Graphs/Pasted image 20241004134845.png\r\n\u001b[8Cimages/Graphs/Pasted image 20241004134847.png\r\n\u001b[8Cimages/Graphs/Pasted image 20241004135150.png\r\n\u001b[8Cimages/Graphs/Pasted image 20241004135521.png\r\n\u001b[8Cimages/Graphs/Pasted image 20241004155613.png\r\n\u001b[8Cimages/Graphs/Pasted image 20241004155655.png\r\n\u001b[8Cimages/Graphs/Pasted image 20241004155835.png\r\n\r\n\u001b[0mzshim@Zachs-Mac-mini DSA % git commit -m \"Update Tree notes.\"\r\n[main 7b20d6b] Update Tree notes.\r\n 5 files changed, 12 insertions(+), 9 deletions(-)\r\n create mode 100644 images/Trees/Pasted image 20250704194555.png\r\nzshim@Zachs-Mac-mini DSA % git add ADT\\'s/Stack \r\ngit status\r\nzshim@Zachs-Mac-mini DSA % git status\r\nOn branch main\r\nYour branch is ahead of 'origin/main' by 1 commit.\r\n  (use \"git push\" to publish your local commits)\r\n\r\nChanges to be committed:\r\n  (use \"git restore --staged <file>...\" to unstage)\r\n\u001b[8C\u001b[32mmodified:   ADT's/Stack/notes/Stack ADT.md\r\n\u001b[8Cnew file:   ADT's/Stack/problems/baseball_game.ts\r\n\u001b[8Crenamed:    ADT's/Stack/src/ArrayStack.java -> ADT's/Stack/src/Java/ArrayStack.java\r\n\u001b[8Crenamed:    ADT's/Stack/src/LinkedListStack.java -> ADT's/Stack/src/Java/LinkedListStack.java\r\n\u001b[8Crenamed:    ADT's/Stack/src/StackADT.java -> ADT's/Stack/src/Java/StackADT.java\r\n\u001b[8Cnew file:   ADT's/Stack/src/Typescript/ArrayStack.ts\r\n\u001b[8Cnew file:   ADT's/Stack/src/Typescript/LinkedListStack.ts\r\n\u001b[8Cnew file:   ADT's/Stack/src/Typescript/StackADT.ts\r\n\r\n\u001b[0mChanges not staged for commit:\r\n  (use \"git add/rm <file>...\" to update what will be committed)\r\n  (use \"git restore <file>...\" to discard changes in working directory)\r\n\u001b[8C\u001b[31mmodified:   .obsidian/core-plugins.json\r\n\u001b[8Cmodified:   .obsidian/plugins/terminal/main.js\r\n\u001b[8Cmodified:   .obsidian/plugins/terminal/manifest.json\r\n\u001b[8Cmodified:   .obsidian/workspace.json\r\n\u001b[8Cmodified:   Algorithms/Recursion/2 - Backtracking/1 - Backtracking Introduction.md\r\n\u001b[8Cdeleted:    images/Pasted image 20241004133643.png\r\n\u001b[8Cdeleted:    images/Pasted image 20241004134845.png\r\n\u001b[8Cdeleted:    images/Pasted image 20241004134847.png\r\n\u001b[8Cdeleted:    images/Pasted image 20241004135150.png\r\n\u001b[8Cdeleted:    images/Pasted image 20241004135521.png\r\n\u001b[8Cdeleted:    images/Pasted image 20241004155613.png\r\n\u001b[8Cdeleted:    images/Pasted image 20241004155655.png\r\n\u001b[8Cdeleted:    images/Pasted image 20241004155835.png\r\n\u001b[8Cdeleted:    ~$lls and Gates.docx\r\n\u001b[8Cdeleted:    ~$mber of Islands.docx\r\n\u001b[8Cdeleted:    ~$mber of Provinces (Connected Components).docx\r\n\u001b[8Cdeleted:    ~$rrounded Regions.docx\r\n\u001b[8Cdeleted:    ~$tting Oranges.docx\r\n\r\n\u001b[0mUntracked files:\r\n  (use \"git add <file>...\" to include in what will be committed)\r\n\u001b[8C\u001b[31mimages/Graphs/Pasted image 20241004133643.png\r\n\u001b[8Cimages/Graphs/Pasted image 20241004134845.png\r\n\u001b[8Cimages/Graphs/Pasted image 20241004134847.png\r\n\u001b[8Cimages/Graphs/Pasted image 20241004135150.png\r\n\u001b[8Cimages/Graphs/Pasted image 20241004135521.png\r\n\u001b[8Cimages/Graphs/Pasted image 20241004155613.png\r\n\u001b[8Cimages/Graphs/Pasted image 20241004155655.png\r\n\u001b[8Cimages/Graphs/Pasted image 20241004155835.png\r\n\r\n\u001b[0mzshim@Zachs-Mac-mini DSA % git commit -m \"Update Stack notes.\"\r\n[main bd324b8] Update Stack notes.\r\n 8 files changed, 395 insertions(+), 4 deletions(-)\r\n create mode 100644 ADT's/Stack/problems/baseball_game.ts\r\n rename ADT's/Stack/src/{ => Java}/ArrayStack.java (100%)\r\n rename ADT's/Stack/src/{ => Java}/LinkedListStack.java (100%)\r\n rename ADT's/Stack/src/{ => Java}/StackADT.java (100%)\r\n create mode 100644 ADT's/Stack/src/Typescript/ArrayStack.ts\r\n create mode 100644 ADT's/Stack/src/Typescript/LinkedListStack.ts\r\n create mode 100644 ADT's/Stack/src/Typescript/StackADT.ts\r\nzshim@Zachs-Mac-mini DSA % git status\r\nOn branch main\r\nYour branch is ahead of 'origin/main' by 2 commits.\r\n  (use \"git push\" to publish your local commits)\r\n\r\nChanges not staged for commit:\r\n  (use \"git add/rm <file>...\" to update what will be committed)\r\n  (use \"git restore <file>...\" to discard changes in working directory)\r\n\u001b[8C\u001b[31mmodified:   .obsidian/core-plugins.json\r\n\u001b[8Cmodified:   .obsidian/plugins/terminal/main.js\r\n\u001b[8Cmodified:   .obsidian/plugins/terminal/manifest.json\r\n\u001b[8Cmodified:   .obsidian/workspace.json\r\n\u001b[8Cmodified:   Algorithms/Recursion/2 - Backtracking/1 - Backtracking Introduction.md\r\n\u001b[8Cdeleted:    images/Pasted image 20241004133643.png\r\n\u001b[8Cdeleted:    images/Pasted image 20241004134845.png\r\n\u001b[8Cdeleted:    images/Pasted image 20241004134847.png\r\n\u001b[8Cdeleted:    images/Pasted image 20241004135150.png\r\n\u001b[8Cdeleted:    images/Pasted image 20241004135521.png\r\n\u001b[8Cdeleted:    images/Pasted image 20241004155613.png\r\n\u001b[8Cdeleted:    images/Pasted image 20241004155655.png\r\n\u001b[8Cdeleted:    images/Pasted image 20241004155835.png\r\n\u001b[8Cdeleted:    ~$lls and Gates.docx\r\n\u001b[8Cdeleted:    ~$mber of Islands.docx\r\n\u001b[8Cdeleted:    ~$mber of Provinces (Connected Components).docx\r\n\u001b[8Cdeleted:    ~$rrounded Regions.docx\r\n\u001b[8Cdeleted:    ~$tting Oranges.docx\r\n\r\n\u001b[0mUntracked files:\r\n  (use \"git add <file>...\" to include in what will be committed)\r\n\u001b[8C\u001b[31mimages/Graphs/Pasted image 20241004133643.png\r\n\u001b[8Cimages/Graphs/Pasted image 20241004134845.png\r\n\u001b[8Cimages/Graphs/Pasted image 20241004134847.png\r\n\u001b[8Cimages/Graphs/Pasted image 20241004135150.png\r\n\u001b[8Cimages/Graphs/Pasted image 20241004135521.png\r\n\u001b[8Cimages/Graphs/Pasted image 20241004155613.png\r\n\u001b[8Cimages/Graphs/Pasted image 20241004155655.png\r\n\u001b[8Cimages/Graphs/Pasted image 20241004155835.png\r\n\r\n\u001b[0mno changes added to commit (use \"git add\" and/or \"git commit -a\")\r\nzshim@Zachs-Mac-mini DSA % git add .\r\nzshim@Zachs-Mac-mini DSA % git commit -m \"Update Graph notes.\"\r\ngit statsu\r\n\r\n[main 6d6d606] Update Graph notes.\r\ngit status\r\n 18 files changed, 294 insertions(+), 168 deletions(-)\r\n rename images/{ => Graphs}/Pasted image 20241004133643.png (100%)\r\n rename images/{ => Graphs}/Pasted image 20241004134845.png (100%)\r\n rename images/{ => Graphs}/Pasted image 20241004134847.png (100%)\r\n rename images/{ => Graphs}/Pasted image 20241004135150.png (100%)\r\n rename images/{ => Graphs}/Pasted image 20241004135521.png (100%)\r\n rename images/{ => Graphs}/Pasted image 20241004155613.png (100%)\r\n rename images/{ => Graphs}/Pasted image 20241004155655.png (100%)\r\n rename images/{ => Graphs}/Pasted image 20241004155835.png (100%)\r\n delete mode 100644 ~$lls and Gates.docx\r\n delete mode 100644 ~$mber of Islands.docx\r\n delete mode 100644 ~$mber of Provinces (Connected Components).docx\r\n delete mode 100644 ~$rrounded Regions.docx\r\n delete mode 100644 ~$tting Oranges.docx\r\nzshim@Zachs-Mac-mini DSA % git statsu\r\ngit: 'statsu' is not a git command. See 'git --help'.\r\n\r\nThe most similar command is\r\n\u001b[8Cstatus\r\nzshim@Zachs-Mac-mini DSA % \r\nzshim@Zachs-Mac-mini DSA % git status\r\nOn branch main\r\nYour branch is ahead of 'origin/main' by 3 commits.\r\n  (use \"git push\" to publish your local commits)\r\n\r\nChanges not staged for commit:\r\n  (use \"git add <file>...\" to update what will be committed)\r\n  (use \"git restore <file>...\" to discard changes in working directory)\r\n\u001b[8C\u001b[31mmodified:   .obsidian/workspace.json\r\n\r\n\u001b[0mno changes added to commit (use \"git add\" and/or \"git commit -a\")\r\nzshim@Zachs-Mac-mini DSA % git push origin\r\nUsername for 'https://github.com': Zach-Shim\r\nPassword for 'https://Zach-Shim@github.com': \r\nremote: Support for password authentication was removed on August 13, 2021.\r\nremote: Please see https://docs.github.com/get-started/getting-started-with-git/about-remote-repositories#cloning-with-https-urls for information on currently recommended modes of authentication.\r\nfatal: Authentication failed for 'https://github.com/Zach-Shim/DSA.git/'\r\nzshim@Zachs-Mac-mini DSA % git push origin\r\nUsername for 'https://github.com': shimzach2@gmail.com\r\nPassword for 'https://shimzach2@gmail.com@github.com': \r\nremote: Support for password authentication was removed on August 13, 2021.\r\nremote: Please see https://docs.github.com/get-started/getting-started-with-git/about-remote-repositories#cloning-with-https-urls for information on currently recommended modes of authentication.\r\nfatal: Authentication failed for 'https://github.com/Zach-Shim/DSA.git/'\r\nzshim@Zachs-Mac-mini DSA % git config\r\nusage: git config [<options>]\r\n\r\nConfig file location\r\n    --global              use global config file\r\n    --system              use system config file\r\n    --local               use repository config file\r\n    --worktree            use per-worktree config file\r\n    -f, --file <file>     use given config file\r\n    --blob <blob-id>      read config from given blob object\r\n\r\nAction\r\n    --get                 get value: name [value-pattern]\r\n    --get-all             get all values: key [value-pattern]\r\n    --get-regexp          get values for regexp: name-regex [value-pattern]\r\n    --get-urlmatch        get value specific for the URL: section[.var] URL\r\n    --replace-all         replace all matching variables: name value [value-pattern]\r\n    --add                 add a new variable: name value\r\n    --unset               remove a variable: name [value-pattern]\r\n    --unset-all           remove all matches: name [value-pattern]\r\n    --rename-section      rename section: old-name new-name\r\n    --remove-section      remove a section: name\r\n    -l, --list            list all\r\n    --fixed-value         use string equality when comparing values to 'value-pattern'\r\n    -e, --edit            open an editor\r\n    --get-color           find the color configured: slot [default]\r\n    --get-colorbool       find the color setting: slot [stdout-is-tty]\r\n\r\nType\r\n    -t, --type <type>     value is given this type\r\n    --bool                value is \"true\" or \"false\"\r\n    --int                 value is decimal number\r\n    --bool-or-int         value is --bool or --int\r\n    --bool-or-str         value is --bool or string\r\n    --path                value is a path (file or directory name)\r\n    --expiry-date         value is an expiry date\r\n\r\nOther\r\n    -z, --null            terminate values with NUL byte\r\n    --name-only           show variable names only\r\n    --includes            respect include directives on lookup\r\n    --show-origin         show origin of config (file, standard input, blob, command line)\r\n    --show-scope          show scope of config (worktree, local, global, system, command)\r\n    --default <value>     with --get, use default value when missing entry\r\n\r\nzshim@Zachs-Mac-mini DSA % git --config\r\nunknown option: --config\r\nusage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\r\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\r\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]\r\n           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]\r\n           [--super-prefix=<path>] [--config-env=<name>=<envvar>]\r\n           <command> [<args>]\r\nzshim@Zachs-Mac-mini DSA % gh auth login\r\nzsh: command not found: gh\r\nzshim@Zachs-Mac-mini DSA % ",
-                    "rows": 54
-                  }
-                }
-              },
-              "pinned": true,
-              "icon": "terminal",
-              "title": "Terminal: zsh"
-            }
           }
         ]
       }
     ],
     "direction": "horizontal",
-    "width": 269.5
+    "width": 335.5
   },
   "right": {
-    "id": "62aedc841707a988",
+    "id": "9b4c8d4914f03fa3",
     "type": "split",
     "children": [
       {
-        "id": "aadd5b620283fa08",
+        "id": "5da8a4e13fabdb9f",
         "type": "tabs",
         "children": [
           {
-            "id": "cd79c0427820bc19",
+            "id": "f4b869263c3f1a6d",
             "type": "leaf",
             "state": {
               "type": "backlink",
               "state": {
-                "file": "ADT's/Graphs/notes/1 - Graph Terminology.md",
+                "file": "Algorithms/Two Pointer/notes/1 - Two Pointer Technique.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -146,25 +104,25 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for 1 - Graph Terminology"
+              "title": "Backlinks for 1 - Two Pointer Technique"
             }
           },
           {
-            "id": "fb53ebc3ede1520d",
+            "id": "7d3602284f68b6cb",
             "type": "leaf",
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "ADT's/Graphs/notes/1 - Graph Terminology.md",
+                "file": "Algorithms/Two Pointer/notes/1 - Two Pointer Technique.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from 1 - Graph Terminology"
+              "title": "Outgoing links from 1 - Two Pointer Technique"
             }
           },
           {
-            "id": "5c0f92556c8ba557",
+            "id": "6bf3d506ca64aa75",
             "type": "leaf",
             "state": {
               "type": "tag",
@@ -177,15 +135,15 @@
             }
           },
           {
-            "id": "8239cd5c3be268a9",
+            "id": "0604b80bd6a05ac2",
             "type": "leaf",
             "state": {
               "type": "outline",
               "state": {
-                "file": "ADT's/Graphs/notes/1 - Graph Terminology.md"
+                "file": "Algorithms/Two Pointer/notes/1 - Two Pointer Technique.md"
               },
               "icon": "lucide-list",
-              "title": "Outline of 1 - Graph Terminology"
+              "title": "Outline of 1 - Two Pointer Technique"
             }
           }
         ]
@@ -206,54 +164,54 @@
       "terminal:Open terminal": false
     }
   },
-  "active": "258292e4d73badcb",
+  "active": "3e94858990dc021e",
   "lastOpenFiles": [
-    "Algorithms/Graphs/problems/Island Perimeter.md",
-    "Algorithms/Graphs/problems/Number of Islands.md",
-    "Algorithms/Graphs/problems/Rotting Oranges.md",
-    "ADT's/Graphs/notes/3 - Graph Traversal.md",
-    "ADT's/Graphs/notes/2 - Graph Implementation.md",
-    "ADT's/Graphs/notes/4 - Topological Sort.md",
-    "ADT's/Graphs/notes/5 - Minimum Spanning Trees.md",
-    "ADT's/Graphs/notes/6 - Disjoint Sets.md",
+    "images/Sets",
+    "images/Lists",
+    "images/Stacks",
+    "images/Untitled.md",
+    "ADT's/Queue/notes/Queue/1 - Queue ADT.md",
+    "images/Queues",
+    "ADT's/Hash Table/problems/HashMap.md",
+    "ADT's/Hash Table/patterns/Time Complexity.md",
+    "ADT's/Hash Table/notes/8 - HashMap.md",
+    "ADT's/Hash Table/notes/7 - Load Factors.md",
+    "ADT's/Hash Table/notes/6 - Separate Chaining.md",
+    "ADT's/Hash Table/notes/3 - Collision Resolution.md",
+    "ADT's/Hash Table/notes/2 - Hash Functions.md",
+    "ADT's/Hash Table/notes/1 - Hashing.md",
+    "ADT's/Array/patterns/Time Complexity.md",
+    "ADT's/Array/patterns/Techinques.md",
+    "ADT's/Array/patterns/Array Constraints.md",
+    "ADT's/Array/notes/03 - Arrays and Loops.md",
+    "ADT's/Array/notes/02 - Java vs. C++ Arrays.md",
+    "ADT's/Array/notes/01 - Array Declaration & Initialization.md",
+    "images/Arrays",
+    "images/Arrays/Pasted image 20250715100154.png",
+    "Resources/Technical Problem Framework.md",
     "ADT's/Graphs/notes/1 - Graph Terminology.md",
-    "Algorithms/Graphs/patterns/Graph Traversals.md",
-    "ADT's/Trees/patterns/Binary Trees/Height & Depth.md",
-    "ADT's/Trees/patterns/Binary Trees/Diameter.md",
-    "ADT's/Trees/patterns/Binary Trees/Balanced.md",
-    "images/Trees/Pasted image 20250706170715.png",
-    "images/Trees/Pasted image 20250706170917.png",
-    "ADT's/Trees/notes/Binary Trees/4 - DFS Traversal.md",
-    "ADT's/Trees/notes/Binary Trees/3 - Binary Tree Types.md",
+    "images/Graphs/Pasted image 20240917162847.png",
     "images/Trees/Pasted image 20250706174440.png",
     "images/Trees/Pasted image 20250706174140.png",
     "images/Trees/Pasted image 20250706174029.png",
     "images/Trees/Pasted image 20250706174006.png",
     "images/Trees/Pasted image 20250706173732.png",
-    "images/Trees/Pasted image 20250706173657.png",
-    "ADT's/Trees/notes/Binary Trees/3 - Binary Tree Height.md",
     "images/Trees/Pasted image 20250706173316.png",
-    "ADT's/Trees/notes/Binary Trees/2 - Binary Tree Properties.md",
-    "ADT's/Trees/notes/Binary Trees/1 - Binary Tree Introduction.md",
-    "ADT's/Queue/notes/Priority Queue/2 - Heap Operations.md",
-    "ADT's/Queue/notes/Priority Queue/1 - Binary Heap Properties.md",
+    "images/Trees/Pasted image 20250706173657.png",
     "images/Trees/Pasted image 20250706171603.png",
-    "ADT's/Trees/notes/General Trees/2 - General Tree Introduction.md",
-    "ADT's/Trees/notes/General Trees/1 - Tree Terminology.md",
-    "ADT's/Trees/notes/Trie/2 - Trie Operations.md",
-    "ADT's/Trees/notes/Trie/1 - Trie Introduction.md",
-    "ADT's/Trees/notes/Binary Search Trees/4 - insert.md",
-    "ADT's/Trees/notes/Binary Search Trees/5 - remove.md",
-    "Resources/images/Graphs",
-    "Resources/images",
-    "Resources/Textbooks/Mark Allen Weiss - Data Structures and Algorithm Analysis in Java, 3rd Edition-Pearson Education Canada (2011).pdf",
-    "Resources/Textbooks/Data Abstraction & Problem Solving with C++.pdf",
-    "Resources/Graph Problems/Walls and Gates.docx",
-    "Resources/Graph Problems/Surrounded Regions.docx",
-    "Resources/Graph Problems/Rotting Oranges.docx",
-    "Resources/Graph Problems/Number of Provinces (Connected Components).docx",
-    "Resources/Graph Problems/Number of Islands.docx",
-    "Resources/Textbooks",
+    "images/Trees",
+    "images",
+    "ADT's/Stack/src/Typescript/StackADT.ts",
+    "ADT's/Stack/src/Typescript/LinkedListStack.ts",
+    "ADT's/Stack/src/Typescript/ArrayStack.ts",
+    "ADT's/Stack/src/Typescript",
+    "Algorithms/Searching/Binary Search/patterns/Search 2D Matrix.md",
+    "Algorithms/Searching/Binary Search/patterns/KoKo Loves Bananas.md",
+    "Algorithms/Searching/Binary Search/notes/3 - Binary Search Visualization.md",
+    "Algorithms/Searching/Binary Search/notes/2 - Binary Search Template.md",
+    "Algorithms/Searching/Binary Search/notes/1 - Binary Search Introduction.md",
+    "Algorithms/Backtracking/subsets.md",
+    "Algorithms/Searching/Binary Search/2 - Binary Search Template.md",
     "Untitled.canvas"
   ]
 }
