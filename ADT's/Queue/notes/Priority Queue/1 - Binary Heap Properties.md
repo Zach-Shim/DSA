@@ -1,15 +1,13 @@
 ## What Is A Binary Heap
 
 A **binary heap** is a data structure that is commonly used for priority queue implementations.
-
-A heap is a concrete implementation of the priority queue abstract data type
-	ADT = Priority Queue
-	Data Structure = Binary Heap
+- Abstract Data Type (ADT) = Priority Queue
+- Data Structure = Binary Heap
 
 Binary heaps are a type of ***binary tree*** and usually just referred to as **_heaps_**_._
-	They are unrelated to the memory pool used for dynamic allocation
+- They are unrelated to the memory pool used for dynamic allocation
 
-Heaps make a tradeoff for node priority values instead of being good at other types of operations like searching and sorting in conventional binary search trees.
+Heaps make a tradeoff for **node priority** values instead of being good at other types of operations like searching and sorting in conventional binary search trees.
 ## Binary Heap Properties
 
 A binary heap is a type of **binary tree** with two important properties:
@@ -23,7 +21,8 @@ An operation on a heap can disturb one of these properties, so a heap operation 
 A binary heap is a **_complete binary tree_**.
 A complete binary tree has every level, except possibly the bottom, completely filled with nodes. If the bottom level is not filled, the nodes are as ***far left*** as possible.
 
-![[Pasted image 20230830100115.png]]
+![](https://cdn.programiz.com/sites/tutorial2program/files/complete-binary-tree_0.png)
+Note that unlike a ***full binary tree***, every node will not necessarily have two children.
 ##### Heap Order
 There are two main types of heaps:
 1. **Minheap** – the **root** contains the **smallest** item in the tree
@@ -48,11 +47,11 @@ There are two main types of heaps:
 
 ##### Minheap and Maxheap Example
 
-![[Pasted image 20230830101030.png]]
+![](https://prepbytes-misc-images.s3.ap-south-1.amazonaws.com/assets/1674109793492-Difference%20Between%20Max%20Heap%20and%20Min%20Heap2.png)
 
-In Figure 17-1, we see that both trees are **complete**.
-Tree (a) is a maxheap, which has the largest value in the tree at its root.
-Tree (b) is a minheap, which has the smallest value in the tree at its root.
+In this figure above, we see that both trees are **complete** (technically, **perfect**).
+The left tree is a minheap, which has the smallest value in the tree at its root.
+The right tree is a maxheap, which has the largest value in the tree at its root
 ## **Binary Heap vs. Binary Search Tree**
 
 A binary heap is similar to a binary search tree, although it differs from a binary search tree in two significant ways:
@@ -67,7 +66,7 @@ A binary heap is similar to a binary search tree, although it differs from a bin
 	2. Everything in its left subtree is smaller than it and everything in its right subtree is larger than it.
 	this is true if the left subtree and right subtree are binary trees.
 	
-	This causes really bad behavior in the worst case (skewed BST).
+	This causes really bad behavior in the worst case (skewed BST as O(N)).
 	
 	While you can view a BST as being in sorted order, a heap is ordered slightly differently. You cannot traverse a binary heap to output the items in sorted order.
 	
@@ -76,11 +75,11 @@ A binary heap is similar to a binary search tree, although it differs from a bin
 	    and
 	2. Every node is less than or equal to all of its children
 	
-	This is true if the smallest element is in the root and results in no degenerate trees.
+	This is true if the smallest element is in the root and results in no degenerate trees due to the Completeness property of Binary Heaps.
 	
-	The difference here is that:
-		BST = Left subtree is < Node and Right subtree > Node
-		Heap = Node < both child subtrees
+	**The difference here is that:**
+		**BST = Left subtree is < Node and Right subtree > Node**
+		**Heap = Node < both child subtrees**
 
 3. **insert and removeMin operations**
 	**Binary Search Tree Worst Case:**
@@ -103,9 +102,12 @@ A binary heap is similar to a binary search tree, although it differs from a bin
 
 A complete binary tree of height _h_ has between 2<sup>h</sup> and 2<sup>h+1</sup>−1 nodes (whether the bottom row has one node or is fully filled). This implies that the **height** of a **complete binary tree** is (log *N*).
 
-Because a heap is a complete binary tree, it can be represented easily in an array without the need for links (pointers).
+![[Pasted image 20250706174006.png]]
 
-This array-based implementation saves memory because the elements in a complete binary tree are always **contiguous**.
+>[!Important]
+>Because a heap is a complete binary tree, it can be represented easily in an array without the need for links (pointers).
+>
+>This array-based implementation saves memory because the elements in a complete binary tree are always **contiguous**.
 
 We can skip index 0 in the array to make the math simpler.
 Therefore, index 0 can be a good place to store the current size of the heap.
@@ -113,9 +115,9 @@ Therefore, index 0 can be a good place to store the current size of the heap.
 >From node _i_, we can find
 >   - The left child at position 2i
 >   - The right child at position 2i + 1
->   - The parent at position i / 2
+>   - The parent at position i // 2
 
-![[Pasted image 20230830102024.png]]
+![[Pasted image 20250715103359.png]]
 
 **Example**: Calculate/Find the left child, right child, and parent of vertex E
 - E is located at index 5.
@@ -125,4 +127,4 @@ Therefore, index 0 can be a good place to store the current size of the heap.
 
 By looking at the following diagram, we can see all of these calculations are correct.
 
-![[Pasted image 20230830102028.png]]
+![[Pasted image 20250715103412.png]]

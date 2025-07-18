@@ -8,7 +8,7 @@ For all heap operations, our strategy is outlined like the following:
 
 An important observation is that because a complete binary tree contains no gaps (other than the right side of the array), it can be represented in an array and no links are necessary.
 
-![[Pasted image 20230830102712.png]]
+![[Pasted image 20250715103622.png]]
 
 **The only problem with this implementation is that an estimate of the maximum heap size is required in advance.**
 
@@ -49,12 +49,12 @@ We first create a 'hole' in the next available leaf position. We therefore satis
 Inserting 14 in this hole, however, would violate the heap-order property.
 We slide (swap) the hole's parent into the hole, thus bubbling the hole up toward the root.
 
-![[Pasted image 20230830103948.png]]
+![[Pasted image 20250715103833.png]]
 
 We repeat the same percolation same steps with the hole's new parent.
 Since 14 is less than 21, we swap the hole with its parent.
 
-![[Pasted image 20230830104045.png]]
+![[Pasted image 20250715103842.png]]
 
 Since 14 is greater than 13, we no longer have to percolate the bubble up, since doing so would violate out minheap's order property.
 
@@ -87,7 +87,7 @@ public void insert(T x) {
 There are several optimization we make here:
 1. Do not insert the new item until the end
     We could have implemented the percolation in the insert routine by performing repeated swaps until the correct order was established, but a swap requires three assignment statements.
-    If an element is percolated up _d_ levels, the number of assignments performed by the swaps would be 3_d_. Our method uses _d_ + 1 assignments.
+    If an element is percolated up _d_ levels, the number of assignments performed by the swaps would be 3*d*. Our method uses _d_ + 1 assignments.
     If the element to be inserted is the new minimum, it will be pushed all the way to the top.
     If this is the case, then at some point, _hole_ will be 1 and we will want to break out of the loop.
 
@@ -122,7 +122,7 @@ A heap removal operation **removes and returns the minimum element in the heap**
 1. Save and remove the minimum value 13 from the tree.
 	After removing the minimum value, a hole is created at the root.
 
-![[Pasted image 20230830105754.png]]
+![[Pasted image 20250715105337.png]]
 
 2. Since the heap now becomes one smaller, it follows that the last element _31_ in the heap must move to the hole.
 
@@ -130,11 +130,11 @@ A heap removal operation **removes and returns the minimum element in the heap**
 
 4. Percolate the smaller of _X_’s children into the hole. Push the hole down one level.
 
-![[Pasted image 20230830110527.png]]
+![[Pasted image 20250715105341.png]]
 
 5. We repeat this step until _X_ can be placed in the hole.
 
-![[Pasted image 20230830110532.png]]
+![[Pasted image 20250715105346.png]]
 
 6. Return 13.
 ##### removeMin Implementation
@@ -168,7 +168,7 @@ private void percolateDown(int hole)
 		child = hole * 2;
 		
 		// see if right child is less than left child
-		if(child != currentSize && array[child+1].compareTo(array[child]) < 0) {
+		if(child != currentSize && array[child].compareTo(array[child+1]) < 0) {
 			child++;
 		}
 		
